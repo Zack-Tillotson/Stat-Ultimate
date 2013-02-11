@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Scored?</th>
+    <th>Active?</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,7 +11,8 @@
 
 <% @lines.each do |line| %>
   <tr>
-    <td><%= line.scored? %></td>
+    <td><%= line.scored %></td>
+    <td><%= line.active %></td>
     <td><%= link_to 'Show', line %></td>
     <td><%= link_to 'Edit', edit_line_path(line) %></td>
     <td><%= link_to 'Destroy', line, method: :delete, data: { confirm: 'Are you sure?' } %></td>

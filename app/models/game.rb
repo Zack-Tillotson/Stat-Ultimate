@@ -1,4 +1,6 @@
 class Game < ActiveRecord::Base
-  attr_accessible :active, :description
+  attr_accessible :active, :description, :team_id
   has_many :lines
+  has_many :players, :through => :teams
+  belongs_to :team
 end

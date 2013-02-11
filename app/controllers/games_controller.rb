@@ -14,6 +14,8 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     @game = Game.find(params[:id])
+    @team = Team.find(@game.team_id)
+    @lines = Line.find(:all, @game.team_id)
 
     respond_to do |format|
       format.html # show.html.erb

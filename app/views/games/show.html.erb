@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Team:</b>
+  <%= @team.name%>
+</p>
+
+<p>
   <b>Description:</b>
   <%= @game.description %>
 </p>
@@ -8,6 +13,32 @@
 <p>
   <b>Active:</b>
   <%= @game.active %>
+</p>
+
+<p>
+  <div>Players:</div>
+  <div>
+    <% @team.players.each do |p| %>
+    <%= p.name %>
+    <% end %>
+  </div>
+  </p>
+
+<p>
+  <div>Lines:</div>
+  <div>
+    <% @lines.each do |l| %>
+      <p><b>Active?</b> <%= l.active%></p>
+      <p><b>Scored?</b> <%= l.scored%></p>
+      <p>
+        <b>Players</b> 
+        <% @l.players.each do |p| %>
+          <%= p.name %>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+  <%= link_to 'New Line', new_game_line_path(@game) %>
 </p>
 
 

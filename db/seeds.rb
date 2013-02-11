@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+t = Team.create([{name: 'oneone'}])
+p = Player.create([{name: 'alice', team_id: t.first.id}, {name: 'bob', team_id: t.first.id}, {name: 'charlie', team_id: t.first.id}])
+g = Game.create([{description: 'game 1 vs other team', active: true, team_id: t.first.id}])
