@@ -19,31 +19,37 @@
   <div>Players:</div>
   <div>
     <% @team.players.each do |p| %>
-    <%= p.name %>
+    <%= link_to p.name, p %>
     <% end %>
   </div>
-  </p>
+</p>
 
 <p>
   <div>Lines:</div>
   <table>
-    <tr>
-      <td>Active</td>
-      <td>Scored</td>
-      <td>Players</td>
-    </tr>
-    <% @lines.each do |l| %>
-    <tr>
-      <td><%= l.active ? "X" : "" %></td>
-      <td><%= l.scored ? 1 : 0 %></td>
-      <td>
-        <% l.players.each do |p| %>
-          <%= p.name %>, 
-        <% end %>
-      </td>
-    </tr>
-    <% end %>
-  </div>
+    <thead>
+      <tr>
+        <td>Line</td>
+        <td>Active</td>
+        <td>Scored</td>
+        <td>Players</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @lines.each_with_index do |l, index| %>
+      <tr>
+        <td><%= link_to index + 1, line_path(l) %></td>
+        <td><%= l.active ? "X" : "" %></td>
+        <td><%= l.scored ? 1 : 0 %></td>
+        <td>
+          <% l.players.each do |p| %>
+            <%= p.name %>, 
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
   <%= link_to 'New Line', new_game_line_path(@game) %>
 </p>
 

@@ -15,7 +15,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @team = Team.find(@game.team_id)
-    @lines = Line.find(:all, @game.team_id)
+    @lines = Line.where("game_id = ?", @game.team_id)
 
     respond_to do |format|
       format.html # show.html.erb
