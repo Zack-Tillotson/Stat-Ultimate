@@ -1,6 +1,6 @@
 StatUltimate::Application.routes.draw do
-  resources :games do
-    resources :lines, :shallow => true
+  resources :games, :shallow => true do
+    resources :lines
   end
   resources :players
   resources :teams

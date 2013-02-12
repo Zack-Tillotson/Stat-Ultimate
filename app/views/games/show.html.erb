@@ -26,16 +26,22 @@
 
 <p>
   <div>Lines:</div>
-  <div>
+  <table>
+    <tr>
+      <td>Active</td>
+      <td>Scored</td>
+      <td>Players</td>
+    </tr>
     <% @lines.each do |l| %>
-      <p><b>Active?</b> <%= l.active%></p>
-      <p><b>Scored?</b> <%= l.scored%></p>
-      <p>
-        <b>Players</b> 
-        <% @l.players.each do |p| %>
-          <%= p.name %>
+    <tr>
+      <td><%= l.active ? "X" : "" %></td>
+      <td><%= l.scored ? 1 : 0 %></td>
+      <td>
+        <% l.players.each do |p| %>
+          <%= p.name %>, 
         <% end %>
-      </p>
+      </td>
+    </tr>
     <% end %>
   </div>
   <%= link_to 'New Line', new_game_line_path(@game) %>

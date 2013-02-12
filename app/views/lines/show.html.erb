@@ -8,7 +8,12 @@
   <b>Active?:</b>
   <%= @line.active %>
 </p>
-
+<p>
+  <b>Players:</b>
+  <% @line.players.each do |p| %>
+    <%= p.name %> |
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_line_path(@line) %> |
-<%= link_to 'Back', lines_path %>
+<%= link_to 'Back', game_path(@line.game) %>

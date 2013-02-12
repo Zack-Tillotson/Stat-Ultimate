@@ -14,7 +14,6 @@ class LinesController < ApplicationController
   # GET /lines/1.json
   def show
     @line = Line.find(params[:id])
-    @players = Player.find(@line.id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +25,7 @@ class LinesController < ApplicationController
   # GET /lines/new.json
   def new
     @line = Line.new
-    @players = Player.find(:all, params[:game_id])
+    @game = Game.find(params[:game_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +36,7 @@ class LinesController < ApplicationController
   # GET /lines/1/edit
   def edit
     @line = Line.find(params[:id])
+    @game = @line.game
   end
 
   # POST /lines
