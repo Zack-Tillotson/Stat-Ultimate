@@ -1,4 +1,12 @@
 class TeamsController < ApplicationController
+
+  def review
+    @team = Team.find(params[:id])
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /teams
   # GET /teams.json
   def index
