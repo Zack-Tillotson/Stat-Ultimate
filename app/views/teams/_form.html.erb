@@ -15,6 +15,15 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+  <div>
+    <div>Players</div>
+    <%= f.fields_for :players do |ff| %>
+      <div class="field">
+        <%= ff.label :name %><br />
+        <%= ff.text_field :name %>
+      </div>
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

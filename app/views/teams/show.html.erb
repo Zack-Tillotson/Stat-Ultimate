@@ -15,6 +15,7 @@
 </p>
 <p>
   <div>Games:</div>
+  <%= link_to "Start New Game", new_team_game_path(@team) %>
   <div>
     <% @team.games.each do |g| %>
     <%= link_to g.description, game_path(g) %>

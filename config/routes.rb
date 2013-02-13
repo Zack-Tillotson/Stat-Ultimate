@@ -1,9 +1,11 @@
 StatUltimate::Application.routes.draw do
+  resources :players
+  resources :teams, :shallow => true do
+    resources :games
+  end
   resources :games, :shallow => true do
     resources :lines
   end
-  resources :players
-  resources :teams
   root :to => "application#index"
 
   # The priority is based upon order of creation:

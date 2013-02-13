@@ -30,7 +30,6 @@
     <thead>
       <tr>
         <td>Line</td>
-        <td>Active</td>
         <td>Scored</td>
         <td>Players</td>
       </tr>
@@ -39,7 +38,6 @@
       <% @lines.each_with_index do |l, index| %>
       <tr>
         <td><%= link_to index + 1, line_path(l) %></td>
-        <td><%= l.active ? "X" : "" %></td>
         <td><%= l.scored ? 1 : 0 %></td>
         <td>
           <% l.players.each do |p| %>
@@ -55,4 +53,4 @@
 
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<%= link_to 'Back', team_path(@team) %>

@@ -10,19 +10,15 @@
       </ul>
     </div>
   <% end %>
-
+  <div>
+    <%= @team.name %>
+  </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
-  <div class="field">
-    <%= f.label :active %><br />
-    <%= f.check_box :active %>
-  </div>
-  <div class="field">
-    <%= f.label :team_id %><br />
-    <%= f.text_field :team_id %>
-  </div>
+  <%= f.hidden_field :active, :value => 'true' %>
+  <%= f.hidden_field :team_id, :value => @team.id %>
   <div class="actions">
     <%= f.submit %>
   </div>

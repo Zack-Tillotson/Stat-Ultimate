@@ -34,7 +34,7 @@ class TeamsController < ApplicationController
 
   # GET /teams/1/edit
   def edit
-    @team = Team.find(params[:id])
+    @team = fillOutPlayers(Team.find(params[:id]))
   end
 
   # POST /teams
@@ -80,4 +80,12 @@ class TeamsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def fillOutPlayers(team)
+    (25 - team.players.size).times do
+      team.players.append(Player.new)
+    end
+    team
+  end
+
 end

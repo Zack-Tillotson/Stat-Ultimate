@@ -15,7 +15,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @team = Team.find(@game.team_id)
-    @lines = Line.where("game_id = ?", @game.team_id)
+    @lines = Line.where("game_id = ?", @game.id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,6 +26,7 @@ class GamesController < ApplicationController
   # GET /games/new
   # GET /games/new.json
   def new
+    @team = Team.find(params[:team_id])
     @game = Game.new
 
     respond_to do |format|
@@ -37,6 +38,7 @@ class GamesController < ApplicationController
   # GET /games/1/edit
   def edit
     @game = Game.find(params[:id])
+    @team = Team.find(@game.team_id)
   end
 
   # POST /games
