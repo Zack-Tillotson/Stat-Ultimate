@@ -1,0 +1,17 @@
+<h1><%= @team.name %> Review!</h1>
+<div>
+  <div><%= @team.games.length %> Games</div>
+</div>
+<div>
+  <h2>Game Breakdown</h2>
+  <% @team.games.each_with_index do |g,i| %>
+    <div>
+      <h3>Game <%=i%>: <%= g.description %></div>
+      <% g.lines.each_with_index do |l,i| %>
+        <div>
+          <%= i %>: <%= l.scored ? "We scored" : "They scored" %>, Players: <%= l.players.map {|p| "#{p.name}, " } %>
+        <div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
