@@ -1,28 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @team.name %>
-</p>
+<h1><%= @team.name %></h1>
 
-<p>
-  <div>Players:</div>
-  <div>
-    <% @team.players.each do |p| %>
-    <%= p.name %>
-    <% end %>
-  </div>
-</p>
-<p>
-  <div>Games:</div>
+<div>
+  <h2>Game Breakdown</h2>
   <%= link_to "Start New Game", new_team_game_path(@team) %>
-  <div>
-    <% @team.games.each do |g| %>
-    <%= link_to g.description, game_path(g) %>
+  <% @team.games.each_with_index do |g,i| %>
+    <div>
+      <h3>Game <%= i+1 %>: <%= link_to g.description, game_path(g) %></h3>
+      <% g.lines.each_with_index do |l,i| %>
+        <div>
+          Point #<%= i+1 %>: Scored: <%= l.scored ? "Us" : "Them" %>, Players: <%= l.players.map {|p| p.name } %>
+        <div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  <h2>Player Breakdown</h2>
+  <table>
+    <thead>
+      <tr>
+        <td>Player</td>
+        <td>Lines</td>
+        <td>Points</td>
+      </tr>
+    </thead>
+    <tbody>
+    <% @team.players.each do |p| %>
+      <tr>
+        <td><%= p.name %></td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
     <% end %>
-  </div>
-</p>
+    </tbody>
+  </table>
+</div>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %> |
-<%= link_to 'Review', "#{team_path(@team)}/review/" %>
+<%= link_to 'Back', teams_path %>

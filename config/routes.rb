@@ -6,7 +6,6 @@ StatUltimate::Application.routes.draw do
   resources :games, :shallow => true do
     resources :lines
   end
-  match 'teams/:id/review' => 'teams#review'
   root :to => "application#index"
 
   # The priority is based upon order of creation:

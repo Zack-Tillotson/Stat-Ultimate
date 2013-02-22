@@ -43,11 +43,12 @@ class LinesController < ApplicationController
   # POST /lines.json
   def create
     @line = Line.new(params[:line])
+    @game = Game.find(@line.game_id)
 
     respond_to do |format|
       if @line.save
-        format.html { redirect_to @line, notice: 'Line was successfully created.' }
-        format.json { render json: @line, status: :created, location: @line }
+        format.html { redirect_to @game, notice: 'Line was successfully created.' }
+        format.json { render json: @game, status: :created, location: @line }
       else
         format.html { render action: "new" }
         format.json { render json: @line.errors, status: :unprocessable_entity }
@@ -59,10 +60,11 @@ class LinesController < ApplicationController
   # PUT /lines/1.json
   def update
     @line = Line.find(params[:id])
+    @game = Game.find(@line.game_id)
 
     respond_to do |format|
       if @line.update_attributes(params[:line])
-        format.html { redirect_to @line, notice: 'Line was successfully updated.' }
+        format.html { redirect_to @game, notice: 'Line was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -75,10 +77,11 @@ class LinesController < ApplicationController
   # DELETE /lines/1.json
   def destroy
     @line = Line.find(params[:id])
+    @game = Game.find(@line.game_id)
     @line.destroy
 
     respond_to do |format|
-      format.html { redirect_to lines_url }
+      format.html { redirect_to game_url(@game) }
       format.json { head :no_content }
     end
   end

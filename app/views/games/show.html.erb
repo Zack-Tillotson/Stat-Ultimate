@@ -1,31 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Team:</b>
-  <%= @team.name%>
-</p>
+<h1><%= @team.name%>: <%= @game.description %></h1>
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', team_path(@team) %>
 
-<p>
-  <b>Description:</b>
-  <%= @game.description %>
-</p>
-
-<p>
-  <b>Active:</b>
-  <%= @game.active %>
-</p>
-
-<p>
-  <div>Players:</div>
-  <div>
-    <% @team.players.each do |p| %>
-    <%= link_to p.name, p %>
-    <% end %>
-  </div>
-</p>
-
-<p>
-  <div>Lines:</div>
+<div>
+  <h2>Lines</h2>
+  <%= render 'lines/form' %>
   <table>
     <thead>
       <tr>
@@ -48,9 +29,13 @@
       <% end %>
     </tbody>
   </table>
-  <%= render 'lines/form' %>
-</p>
+</div>
 
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', team_path(@team) %>
+<div>
+  <h2>Player Breakdown</h2>
+  <div>
+    <% @team.players.each do |p| %>
+    <%= link_to p.name, p %>
+    <% end %>
+  </div>
+</div>
