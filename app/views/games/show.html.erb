@@ -37,8 +37,8 @@
     <tbody>
       <% @lines.each_with_index do |l, index| %>
       <tr>
-        <td><%= link_to index + 1, line_path(l) %></td>
-        <td><%= l.scored ? 1 : 0 %></td>
+        <td><%= link_to "Point #{index + 1}", line_path(l) %></td>
+        <td><%= l.scored ? "Us" : "Them" %></td>
         <td>
           <% l.players.each do |p| %>
             <%= p.name %>, 
@@ -48,7 +48,7 @@
       <% end %>
     </tbody>
   </table>
-  <%= link_to 'New Line', new_game_line_path(@game) %>
+  <%= render 'lines/form' %>
 </p>
 
 

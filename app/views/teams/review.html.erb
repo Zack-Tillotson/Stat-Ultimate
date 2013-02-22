@@ -9,7 +9,7 @@
       <h3>Game <%=i%>: <%= g.description %></div>
       <% g.lines.each_with_index do |l,i| %>
         <div>
-          <%= i %>: <%= l.scored ? "We scored" : "They scored" %>, Players: <%= l.players.map {|p| "#{p.name}, " } %>
+          Point #<%= i+1 %>: Scored: <%= l.scored ? "Us" : "Them" %>, Players: <%= l.players.map {|p| p.name } %>
         <div>
       <% end %>
     </div>

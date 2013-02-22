@@ -24,7 +24,7 @@ class LinesController < ApplicationController
   # GET /lines/new
   # GET /lines/new.json
   def new
-    @line = Line.new
+    @activeline = Line.new
     @game = Game.find(params[:game_id])
 
     respond_to do |format|
@@ -35,7 +35,7 @@ class LinesController < ApplicationController
 
   # GET /lines/1/edit
   def edit
-    @line = Line.find(params[:id])
+    @activeline = Line.find(params[:id])
     @game = @line.game
   end
 
