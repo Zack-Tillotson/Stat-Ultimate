@@ -80,4 +80,23 @@ class PlayersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # GET /players/1/graph.json
+  def graph
+    @player = Player.find(params[:id])
+    @container = params[:container] || "container"
+    @title = params[:title] || "Points"
+    @subtitle = params[:subtitle] || ""
+
+    @data = Hash.new
+    @player.team.games.each { |g|
+      @data[g.id] = Hash.new
+      @data[g.id]['won'] = Line.joins(:line_players).where("game_id = ? and player_id = ? and scored = 1", g.id, @player.id).count
+      @data[g.id]['lost'] = Line.joins(:line_players).where("game_id = ? and player_id = ? and scored = 0", g.id, @player.id).count
+    }
+
+    respond_to do |format|
+      format.json
+    end
+  end
 end

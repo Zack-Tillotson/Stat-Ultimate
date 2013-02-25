@@ -3,39 +3,8 @@
 <h1><%= @team.name%>: <%= @game.description %></h1>
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', team_path(@team) %>
+<%= render 'games/game_info', :game => @game, :index => 0, :container => "graph-game-#{@game.id}" %>
 
 <div>
-  <h2>Lines</h2>
   <%= render 'lines/form' %>
-  <table>
-    <thead>
-      <tr>
-        <td>Line</td>
-        <td>Scored</td>
-        <td>Players</td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @lines.each_with_index do |l, index| %>
-      <tr>
-        <td><%= link_to "Point #{index + 1}", line_path(l) %></td>
-        <td><%= l.scored ? "Us" : "Them" %></td>
-        <td>
-          <% l.players.each do |p| %>
-            <%= p.name %>, 
-          <% end %>
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-
-<div>
-  <h2>Player Breakdown</h2>
-  <div>
-    <% @team.players.each do |p| %>
-    <%= link_to p.name, p %>
-    <% end %>
-  </div>
 </div>

@@ -85,4 +85,29 @@ class GamesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def graph
+    @game = Game.find(params[:id])
+    @container = params[:container] || "container"
+    @title = params[:title] || "Points"
+    @subtitle = params[:subtitle] || ""
+
+    prevus=0
+    prevthem=0
+    @data = Hash.new
+    @data[0] = Hash.new
+    @data[0]['us'] = prevus
+    @data[0]['them'] = prevthem
+    @game.lines.each_with_index { |l, i|
+      prevus += l.scored ? 1 : 0
+      prevthem += l.scored ? 0 : 1
+      @data[i+1] = Hash.new
+      @data[i+1]['us'] = prevus
+      @data[i+1]['them'] = prevthem
+    }
+
+    respond_to do |format|
+      format.json
+    end
+  end
 end

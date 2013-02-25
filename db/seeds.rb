@@ -28,6 +28,10 @@ p = Player.create([
    {name: 'under', team_id: t.first.id},
    {name: 'vergo', team_id: t.first.id}
 ])
-g = Game.create([{description: 'game 1 vs other team', active: true, team_id: t.first.id}])
-l = Line.create([{scored: 0, active: 1, game_id: g.first.id}])
-Player.all.each { |pl| l.first.players << pl }
+(1..10).each { |i|
+  g = Game.create([{description: "Game #{i}", team_id: t.first.id}])
+  (1..25).each { |j|
+    l = Line.create({scored: rand(2), active: 0, game_id: g.first.id})
+    Player.all.shuffle.slice(1..7).each { |pl| l.players << pl }
+  }
+}

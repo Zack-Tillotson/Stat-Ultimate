@@ -1,0 +1,59 @@
+{
+  "chart": {
+    "renderTo": "<%= @container %>",
+    "type": "line",
+    "marginRight": 50,
+    "marginLeft": 50,
+    "marginBottom": 25,
+    "marginTop": 25
+  },
+  "title": {
+    "text": "<%=@title %>",
+    "x": -20,
+    "y": 10
+  },
+  "subtitle": {
+    "text": "<%=@subtitle %>",
+    "x": -20
+  },
+  "xAxis": {
+    "categories": <%= @data.keys.to_s %>,
+    "min": 0
+  },
+  "yAxis": {
+    "title": {
+      "text": "Points"
+    },
+    "plotLines": [{
+      "value": 0,
+      "width": 1,
+      "color": "#808080"
+    }],
+    "tickInterval": 1,
+    "min": 0
+  },
+  "colors": [
+  ],
+  "legend": {
+    "layout": "vertical",
+    "align": "right",
+    "verticalAlign": "top",
+    "x": -10,
+    "y": 10,
+    "borderWidth": 0
+    },
+  "plotOptions": {
+    "column": {
+      "stacking": "normal"
+    }
+  },
+  "series": [{
+      "name": "<%= @game.team.name %> Score",
+      "data": <%= @data.map { |key, value| value['us'] } %>,
+      "stack": "points"
+    }, {
+      "name": "Opponent Score",
+      "data": <%= @data.map { |key, value| value['them'] } %>,
+      "stack": "points"
+  }]
+}

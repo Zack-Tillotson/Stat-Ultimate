@@ -1,0 +1,57 @@
+{
+  "chart": {
+    "renderTo": "<%= @container %>",
+    "type": "column",
+    "marginRight": 50,
+    "marginLeft": 50,
+    "marginBottom": 25,
+    "marginTop": 25
+  },
+  "title": {
+    "text": "<%=@title %>",
+    "x": -20,
+    "y": 10
+  },
+  "subtitle": {
+    "text": "<%=@subtitle %>",
+    "x": -20
+  },
+  "xAxis": {
+  "categories": <%= @data.keys.to_s %>
+  },
+  "yAxis": {
+    "title": {
+      "text": "Points"
+    },
+    "plotLines": [{
+      "value": 0,
+      "width": 1,
+      "color": "#808080"
+    }],
+    "tickInterval": 1 
+  },
+  "colors": [
+  ],
+  "legend": {
+    "layout": "vertical",
+    "align": "right",
+    "verticalAlign": "top",
+    "x": -10,
+    "y": 10,
+    "borderWidth": 0
+    },
+  "plotOptions": {
+    "column": {
+      "stacking": "normal"
+    }
+  },
+  "series": [{
+      "name": "Points Won",
+      "data": <%= @data.map { |key, value| value['won'] } %>,
+      "stack": "points"
+    }, {
+      "name": "Points Lost",
+      "data": <%= @data.map { |key, value| value['lost'] } %>,
+      "stack": "points"
+  }]
+}

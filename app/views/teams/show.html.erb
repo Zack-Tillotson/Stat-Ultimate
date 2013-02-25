@@ -6,14 +6,7 @@
   <h2>Game Breakdown</h2>
   <%= link_to "Start New Game", new_team_game_path(@team) %>
   <% @team.games.each_with_index do |g,i| %>
-    <div>
-      <h3>Game <%= i+1 %>: <%= link_to g.description, game_path(g) %></h3>
-      <% g.lines.each_with_index do |l,i| %>
-        <div>
-          Point #<%= i+1 %>: Scored: <%= l.scored ? "Us" : "Them" %>, Players: <%= l.players.map {|p| p.name } %>
-        <div>
-      <% end %>
-    </div>
+    <%= render 'games/game_info', :game => g, :index => i, :container => "graph-game-#{g.id}" %>
   <% end %>
 </div>
 
@@ -33,6 +26,11 @@
         <td><%= p.name %></td>
         <td>-</td>
         <td>-</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <%= render "players/points_played", :player => p, :container => "graph-player-#{p.id}" %>
+        </td>
       </tr>
     <% end %>
     </tbody>
