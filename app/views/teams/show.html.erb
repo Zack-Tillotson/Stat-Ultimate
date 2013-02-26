@@ -7,6 +7,7 @@
   <%= link_to "Start New Game", new_team_game_path(@team) %>
   <% @team.games.each_with_index do |g,i| %>
     <%= render 'games/short_game_info', :game => g, :index => i %>
+    <%= render 'games/game_info', :game => g, :index => i %>
   <% end %>
 </div>
 

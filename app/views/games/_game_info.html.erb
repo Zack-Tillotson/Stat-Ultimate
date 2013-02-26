@@ -1,5 +1,4 @@
     <div>
-      <h3>Game <%= index + 1 %>: <%= link_to game.description, game_path(game) %></h3>
-      <%= render 'games/score_graph', :game => game, :container => container %>
+      <%= render 'games/score_graph', :game => game, :container => "graph-game-#{game.id}" %>
       <%= render 'games/lines_table', :game => game %>
     </div>
