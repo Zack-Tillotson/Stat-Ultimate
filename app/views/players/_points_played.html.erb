@@ -1,5 +1,5 @@
-<div class="graph" id="<%= container %>">
+<div class="graph" id="graph-player-<%= player.id %>">
   <script type="text/javascript">
-    $.getJSON('<%= graph_player_url(player, :format => :json, :container => container) %>', function(data) {new Highcharts.Chart(data)})
+    $.getJSON('<%= graph_player_url(player, :format => :json, :container => "graph-player-#{player.id}") %>', function(data) {new Highcharts.Chart(data)})
   </script>
 </div>

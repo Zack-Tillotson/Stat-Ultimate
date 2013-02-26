@@ -31,6 +31,8 @@
     "tickInterval": 1 
   },
   "colors": [
+    "#ff9933",
+    "#99ccff"
   ],
   "legend": {
     "layout": "vertical",
@@ -46,12 +48,12 @@
     }
   },
   "series": [{
-      "name": "Points Won",
-      "data": <%= @data.map { |key, value| value['won'] } %>,
-      "stack": "points"
-    }, {
       "name": "Points Lost",
       "data": <%= @data.map { |key, value| value['lost'] } %>,
+      "stack": "points"
+    }, {
+      "name": "Points Won",
+      "data": <%= @data.map { |key, value| value['won'] } %>,
       "stack": "points"
   }]
 }

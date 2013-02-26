@@ -1,0 +1,7 @@
+<tr>
+  <td><%= link_to player.name, player %></td>
+  <td><%= player.lines.length %></td>
+  <td><%= player.points_played({:scored => true})%></td>
+  <td><%= player.points_played({:scored => false})%></td>
+  <td><%= player.points_played({:scored => true}) - player.points_played({:scored => false})%></td>
+</tr>

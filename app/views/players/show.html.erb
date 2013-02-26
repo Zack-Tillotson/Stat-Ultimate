@@ -2,13 +2,11 @@
 
 <p>
   <b>Name:</b>
-  <%= @player.name %>
+  <%= @player.name %>, 
+  <b>Team:</b>
+  <%= @player.team.name %>
 </p>
 
-<p>
-  <b>Team Id:</b>
-  <%= @player.team_id %>
-</p>
-
+<%= render 'points_played', :player => @player %>
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>

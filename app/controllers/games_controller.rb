@@ -87,7 +87,7 @@ class GamesController < ApplicationController
   end
 
   def graph
-    @game = Game.find(params[:id])
+    @game = Game.find(params[:id], :include => [:team, :lines])
     @container = params[:container] || "container"
     @title = params[:title] || "Points"
     @subtitle = params[:subtitle] || ""

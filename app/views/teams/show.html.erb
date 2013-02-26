@@ -6,7 +6,7 @@
   <h2>Game Breakdown</h2>
   <%= link_to "Start New Game", new_team_game_path(@team) %>
   <% @team.games.each_with_index do |g,i| %>
-    <%= render 'games/game_info', :game => g, :index => i, :container => "graph-game-#{g.id}" %>
+    <%= render 'games/short_game_info', :game => g, :index => i %>
   <% end %>
 </div>
 
@@ -16,22 +16,15 @@
     <thead>
       <tr>
         <td>Player</td>
-        <td>Lines</td>
-        <td>Points</td>
+        <td>Played</td>
+        <td>Won</td>
+        <td>Lost</td>
+        <td>+/-</td>
       </tr>
     </thead>
     <tbody>
     <% @team.players.each do |p| %>
-      <tr>
-        <td><%= p.name %></td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td colspan="3">
-          <%= render "players/points_played", :player => p, :container => "graph-player-#{p.id}" %>
-        </td>
-      </tr>
+      <%= render 'players/stats', :player => p %>
     <% end %>
     </tbody>
   </table>

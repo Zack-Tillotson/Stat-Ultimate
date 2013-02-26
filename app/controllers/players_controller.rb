@@ -91,8 +91,8 @@ class PlayersController < ApplicationController
     @data = Hash.new
     @player.team.games.each { |g|
       @data[g.id] = Hash.new
-      @data[g.id]['won'] = Line.joins(:line_players).where("game_id = ? and player_id = ? and scored = 1", g.id, @player.id).count
-      @data[g.id]['lost'] = Line.joins(:line_players).where("game_id = ? and player_id = ? and scored = 0", g.id, @player.id).count
+      @data[g.id]['won'] = @player.points_played({:game_id => g.id, :scored => true})
+      @data[g.id]['lost'] = @player.points_played({:game_id => g.id, :scored => false})
     }
 
     respond_to do |format|
