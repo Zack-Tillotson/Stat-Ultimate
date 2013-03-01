@@ -11,3 +11,62 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  margin: 0px;
+}
+
+.bg {
+  background: url('/grass-sky.jpg');
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+header {
+  font-size: 30px;
+  background-color: rgba(200, 200, 200, .8);
+  border-bottom: solid 3px black;
+  margin-bottom: 10px;
+  padding: 10px 0 10px 20px;
+}
+
+.content {
+  padding: 15px;
+}
+
+.how-to {
+  width: 600px;
+  padding: 0px 30px;
+  margin: 30px;
+  background-color: rgba(200, 200, 200, .8);
+  border-radius: 8px;
+  border: solid 2px #555;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.how-to ul {
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.link {
+  width: 600px;
+  padding: 30px;
+  margin: 30px;
+  background-color: rgba(200, 200, 200, .8);
+  border-radius: 8px;
+  border: solid 2px #555;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link a:link {
+  font-size: 40px;
+  line-height: 40px;
+  display: block;
+}

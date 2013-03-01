@@ -10,10 +10,15 @@
 <body>
 
   <header>
-    <a href="/teams/">Teams</a>
+    <a href="/">Home</a>
+    <% if defined? @team %>
+      <%=link_to @team.name, @team %>
+    <% end %>
   </header>
 
-<%= yield %>
+  <div class="content">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
