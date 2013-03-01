@@ -32,7 +32,7 @@ class TeamsController < ApplicationController
   # GET /teams/new
   # GET /teams/new.json
   def new
-    @team = Team.new
+    @team = fillOutPlayers(Team.new)
 
     respond_to do |format|
       format.html # new.html.erb

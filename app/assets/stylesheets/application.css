@@ -54,7 +54,7 @@ header {
   line-height: 50px;
 }
 
-.link {
+.fp-link {
   width: 600px;
   padding: 30px;
   margin: 30px;
@@ -65,7 +65,7 @@ header {
   margin-right: auto;
 }
 
-.link a:link {
+.fp-link a:link {
   font-size: 40px;
   line-height: 40px;
   display: block;

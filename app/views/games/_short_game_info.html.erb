@@ -3,5 +3,5 @@
         <span class="score"><%= game.our_score %></span> - <span class="score"><%= game.their_score %></span>
       </span>|
       <span class="link"><%= link_to game.description, game %></span>
-      <%= link_to 'Review', review_game_path(game) %> |
+      (<%= link_to 'Review', review_game_path(game) %>)
     </div>

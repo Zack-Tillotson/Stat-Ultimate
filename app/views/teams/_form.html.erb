@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Team Name" %><br />
     <%= f.text_field :name %>
   </div>
   <div>
-    <div>Players</div>
+    <h3>Players</h3>
     <%= f.fields_for :players do |ff| %>
       <div class="field">
-        <%= ff.label :name %><br />
+        <%= ff.label :name %>
         <%= ff.text_field :name %>
       </div>
     <% end %>
