@@ -11,17 +11,3 @@
  *= require_self
  *= require_tree .
  */
-
-div.graph {
-  width: 930px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-table td.us {
-  background-color: #B8F2B8;
-}
-
-table td.them {
-  background-color: #F2B8B8;
-}

@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Team: <%= @team.name %></h1>
+<%= link_to 'Back', team_path(@team) %>
+
+<div class="game-list">
+  <ul>
+    <% @team.games.reverse.each_with_index do |g,i| %>
+      <li><%= render 'games/short_game_info', :game => g %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= render 'players/stats_table', :players => @team.players, :game_id => nil %>
+</div>

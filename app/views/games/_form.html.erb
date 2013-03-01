@@ -10,11 +10,8 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= @team.name %>
-  </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description, "Description" %>
     <%= f.text_field :description %>
   </div>
   <%= f.hidden_field :active, :value => 'true' %>

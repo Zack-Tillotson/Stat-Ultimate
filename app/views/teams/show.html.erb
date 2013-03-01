@@ -1,34 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @team.name %></h1>
+<h1>Team: <%= @team.name %></h1>
 
-<div>
-  <h2>Game Breakdown</h2>
-  <%= link_to "Start New Game", new_team_game_path(@team) %>
-  <% @team.games.each_with_index do |g,i| %>
-    <%= render 'games/short_game_info', :game => g, :index => i %>
-  <% end %>
-</div>
-
-<div>
-  <h2>Player Breakdown</h2>
-  <table>
-    <thead>
-      <tr>
-        <td>Player</td>
-        <td>Played</td>
-        <td>Won</td>
-        <td>Lost</td>
-        <td>+/-</td>
-      </tr>
-    </thead>
-    <tbody>
-    <% @team.players.each do |p| %>
-      <%= render 'players/stats', :player => p %>
+<div class="game-list">
+  <%= link_to "New Game", new_team_game_path(@team), :class => "new-game" %>
+  <ul>
+    <% @team.games.reverse.each_with_index do |g,i| %>
+      <li><%= render 'games/short_game_info', :game => g, :index => i %></li>
     <% end %>
-    </tbody>
-  </table>
+  </ul>
 </div>
 
+<%= link_to 'Review', review_team_path(@team) %> |
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>

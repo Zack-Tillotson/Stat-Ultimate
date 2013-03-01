@@ -54,15 +54,14 @@
   width: 90%;
   text-align: center;
   margin-bottom: 10px;
+  border-color: #ccc;
 }
 
 .new_line input.tf:checked + label.tf {
-  border-color: #333;
   background-color: #87C1D4;
 }
 
 .new_line input.tf:not(:checked) + label.tf {
-  border-color: #ccc;
   background-color: #FF7D7D;
 }
 

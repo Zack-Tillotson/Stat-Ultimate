@@ -14,8 +14,22 @@ class GamesController < ApplicationController
   # GET /games/1.json
   def show
     @game = Game.find(params[:id])
-    @team = Team.find(@game.team_id)
-    @lines = Line.where("game_id = ?", @game.id)
+    @team = @game.team
+    @lines = @game.lines
+    @activeline = Line.new
+    @activeline.prepopulate_received(@game)
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @game }
+    end
+  end
+
+  def review 
+    @game = Game.find(params[:id])
+    @team = @game.team
+    @lines = @game.lines
+    @players = @team.players
     @activeline = Line.new
     @activeline.prepopulate_received(@game)
 
@@ -51,10 +65,8 @@ class GamesController < ApplicationController
     respond_to do |format|
       if @game.save
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
-        format.json { render json: @game, status: :created, location: @game }
       else
         format.html { render action: "new" }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
       end
     end
   end

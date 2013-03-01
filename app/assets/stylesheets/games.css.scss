@@ -6,10 +6,56 @@ h1.game {
   font-size: 30px;
 }
 
-.score {
+.big-score {
   font-size: 40px;
   font-weight: bold;
   text-align: center;
   padding: 10px;
 }
 
+.short {
+  font-size: 20px;
+}
+
+.short .winning {
+  background-color: #9ACFFC;
+}
+
+.short .losing {
+  background-color: #FF8A8A;
+}
+
+.short a:link {
+  text-decoration: none;
+  color: #222;
+}
+
+.short a:hover {
+  text-decoration: underline;
+  background-color: #fff;
+}
+
+.short .name {
+  width: 400px;
+  display: inline-block;
+}
+
+.short .score {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+  width: 30px;
+  display: inline-block;
+}
+
+.full-game-info {
+  margin-bottom: 20px;
+}
+
+.new_game {
+  font-size: 25px;
+}
+
+.new_game label, .new_game input {
+  display: inline;
+}

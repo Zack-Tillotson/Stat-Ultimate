@@ -5,9 +5,13 @@ StatUltimate::Application.routes.draw do
     end
   end
   resources :teams, :shallow => true do
+    member do
+      get 'review'
+    end
     resources :games do
       member do
         get 'graph'
+        get 'review'
       end
     end
   end

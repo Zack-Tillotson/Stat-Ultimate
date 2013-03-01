@@ -1,0 +1,24 @@
+  <table class="player-stats">
+    <thead>
+      <tr>
+        <td>Player</td>
+        <td class="number">Played</td>
+        <td class="number">Won</td>
+        <td class="number">Lost</td>
+        <td class="number">+/-</td>
+        <td class="number">Offense</td>
+        <td class="number">Won</td>
+        <td class="number">Lost</td>
+        <td class="number">+/-</td>
+        <td class="number">Defense</td>
+        <td class="number">Won</td>
+        <td class="number">Lost</td>
+        <td class="number">+/-</td>
+      </tr>
+    </thead>
+    <tbody>
+    <% players.each do |p| %>
+      <%= render 'players/stats', :player => p, :game_id => game_id %>
+    <% end %>
+    </tbody>
+  </table>

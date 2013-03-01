@@ -1,7 +1,16 @@
 <tr>
   <td><%= link_to player.name, player %></td>
-  <td><%= player.lines.length %></td>
-  <td><%= player.points_played({:scored => true})%></td>
-  <td><%= player.points_played({:scored => false})%></td>
-  <td><%= player.points_played({:scored => true}) - player.points_played({:scored => false})%></td>
+  <td class="number total"><%= player.points_played({:game_id => game_id})%></td>
+  <td class="number total"><%= player.points_played({:scored => true, :game_id => game_id})%></td>
+  <td class="number total"><%= player.points_played({:scored => false, :game_id => game_id})%></td>
+  <td class="number total"><%= player.points_played({:scored => true, :game_id => game_id}) - player.points_played({:scored => false, :game_id => game_id})%></td>
+  <td class="number offense"><%= player.points_played({:received => true, :game_id => game_id}) %></td>
+  <td class="number offense"><%= player.points_played({:scored => true, :received => true, :game_id => game_id})%></td>
+  <td class="number offense"><%= player.points_played({:scored => false, :received => true, :game_id => game_id})%></td>
+  <td class="number offense"><%= player.points_played({:scored => true, :received => true, :game_id => game_id}) - player.points_played({:scored => false, :received => true, :game_id => game_id})%></td>
+  <td class="number defense"><%= player.points_played({:received => false, :game_id => game_id}) %></td>
+  <td class="number defense"><%= player.points_played({:scored => true, :received => false, :game_id => game_id})%></td>
+  <td class="number defense"><%= player.points_played({:scored => false, :received => false, :game_id => game_id})%></td>
+  <td class="number defense"><%= player.points_played({:scored => true, :received => false, :game_id => game_id}) - player.points_played({:scored => false, :received => false, :game_id => game_id})%></td>
+</tr>
 </tr>

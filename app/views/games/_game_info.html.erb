@@ -1,4 +1,5 @@
-    <div>
+    <div class="full-game-info">
+      <%= render 'games/short_game_info', :game => game %>
       <%= render 'games/score_graph', :game => game, :container => "graph-game-#{game.id}" %>
       <%= render 'games/lines_table', :game => game %>
     </div>

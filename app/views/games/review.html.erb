@@ -1,0 +1,4 @@
+    <div class="full-game-info">
+      <%= render 'games/game_info', :game => @game %>
+      <%= render 'players/stats_table', :players => @game.team.players, :game_id => @game.id %>
+    </div>
