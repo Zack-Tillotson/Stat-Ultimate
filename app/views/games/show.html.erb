@@ -1,10 +1,6 @@
 <p id="notice"><%= notice %></p>
-
-<h1><%= @team.name%>: <%= @game.description %></h1>
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', team_path(@team) %>
+<h1 class="game"><%= @team.name%>: <%= @game.description %></h1>
 <%= render 'games/short_game_info', :game => @game, :index => 0 %>
-<%#= render 'games/game_info', :game => @game, :index => 0 %>
 
 <div>
   <%= render 'lines/form' %>

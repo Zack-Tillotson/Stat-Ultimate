@@ -12,22 +12,13 @@
   <% end %>
 
   <%= hidden_field_tag :game_id, @game.id, :name => 'line[game_id]'%>
-  <div class="field">
-    <%= f.label :received, "We Recieved?" %><br />
-    <%= f.check_box :received%>
-  </div>
-  <div class="field">
-    <%= f.label :scored, "We Scored?" %><br />
-    <%= f.check_box :scored %>
-  </div>
-  <div>
-    <p>Players On The Field</p>
-    <% @game.team.players.each do |p| %>
-      <%= check_box_tag "player_check_#{p.id}", p.id, false, :name => 'line[player_ids][]', :class => 'player' %>
-      <%= label_tag "player_check_#{p.id}", p.name, :class => 'player' %>
-    <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.check_box :received, :class => "tf received" %>
+  <label class="tf received" for="line_received"></label>
+  <% @game.team.players.each do |p| %>
+    <%= check_box_tag "player_check_#{p.id}", p.id, false, :name => 'line[player_ids][]', :class => 'player' %>
+    <%= label_tag "player_check_#{p.id}", p.name, :class => 'player' %>
+  <% end %>
+  <%= f.check_box :scored, :class => "tf scored" %>
+  <label class="tf scored" for="line_scored"></label>
+  <%= f.submit "Submit" %>
 <% end %>
