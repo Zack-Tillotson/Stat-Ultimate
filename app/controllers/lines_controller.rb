@@ -24,8 +24,9 @@ class LinesController < ApplicationController
   # GET /lines/new
   # GET /lines/new.json
   def new
-    @activeline = Line.new
     @game = Game.find(params[:game_id])
+    @activeline = Line.new
+    @activeline.prepopulateReceived(@game)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,9 +35,10 @@ class LinesController < ApplicationController
   end
 
   # GET /lines/1/edit
+  # TODO Fix this
   def edit
     @activeline = Line.find(params[:id])
-    @game = @line.game
+    @game = @activeline.game
   end
 
   # POST /lines

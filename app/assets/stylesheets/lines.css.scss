@@ -1,3 +1,29 @@
 // Place all the styles related to the Lines controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_line label.player {
+  font-size: 50px;
+  display: inline-block;
+  padding: 30px;
+  border: solid 3px;
+  position: relative;
+}
+
+.new_line input.player {
+  display: none;
+}
+
+.new_line input.player:not(:checked) + label.player {
+  border-color: #737373;
+  background-color: #ccc;
+  color: #000;
+  text-shadow: 0 0 5px white;
+}
+
+.new_line input.player:checked + label.player {
+  border-color: #00ab03;
+  background-color: #B8F2B8;
+  color: #000000;
+  text-shadow: 0 0 3px white;
+}

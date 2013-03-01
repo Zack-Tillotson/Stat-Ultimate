@@ -17,6 +17,7 @@ class GamesController < ApplicationController
     @team = Team.find(@game.team_id)
     @lines = Line.where("game_id = ?", @game.id)
     @activeline = Line.new
+    @activeline.prepopulate_received(@game)
 
     respond_to do |format|
       format.html # show.html.erb
