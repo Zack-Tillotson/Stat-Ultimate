@@ -1,23 +1,12 @@
-<h1>Listing teams</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Your Teams</h1>
 
 <% @teams.each do |team| %>
-  <tr>
-    <td><%= team.name %></td>
-    <td><%= link_to 'Show', team %></td>
-    <td><%= link_to 'Edit', edit_team_path(team) %></td>
-    <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div>
+    <span class="team-name"><%= team.name %></span>
+    <%= link_to 'Show', team, :class => "link" %>
+    <%= link_to 'Edit', edit_team_path(team), :class => "link"  %>
+    <%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure? This is irreversible!' }, :class => "link warning"  %>
+  </div>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Team', new_team_path %>
+<%= link_to 'New Team', new_team_path, :class => "link" %>
