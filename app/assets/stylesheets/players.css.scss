@@ -2,9 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .player-stats {
-  width: 80%;
+  width: 95%;
   margin: 20px;
   border-collapse: collapse;
+  margin: 10px auto;
 }
 
 .player-stats thead td {
@@ -16,9 +17,13 @@
 }
 
 .player-stats td {
-  font-size: 20px;
+  font-size: 15px;
   border: solid 1px #ccc;
   padding: 5px;
+}
+
+table .player {
+  text-align: left;
 }
 
 .player-stats td.number {
@@ -30,7 +35,7 @@
 }
 
 .player-stats td.offense {
-  background-color: #9ACFFC;
+  background-color: #F2B8B8;
 }
 
 .player-stats td.defense {
@@ -48,10 +53,16 @@ table.lines {
   font-size: 15px;
   width: 95%;
   text-align: center;
+  margin: 10px auto;
 }
 
 table.lines thead td {
   border-bottom: solid 1px black;
+}
+
+table.lines thead {
+  border-bottom: solid 2px;
+  font-weight: bold;
 }
 
 table.lines td {

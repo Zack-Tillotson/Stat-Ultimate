@@ -1,7 +1,10 @@
     <div class="short">
       <span class="<%= (game.our_score > game.their_score ? 'winning' : 'losing')%>">
         <span class="score"><%= game.our_score %></span> - <span class="score"><%= game.their_score %></span>
-      </span>|
-      <span class="link"><%= link_to game.description, game %></span>
-      (<%= link_to 'Review', review_game_path(game) %>)
+      </span>
+      <%= game.description %> 
+      :
+      <span class="link"><%= link_to "Record", game %></span>, 
+      <%= link_to 'Review', review_game_path(game) %>
+      
     </div>

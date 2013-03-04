@@ -31,13 +31,13 @@
 }
 
 .new_line input[type=submit] {
-  width: 100%;
   font-size: 30px;
   background-color: #B06A1A;
   border: solid 3px #000;
-  margin-top: 20px;
+  margin-top: 50px;
   font-weight: bold;
   text-shadow: 0 0 2px #fff;
+  padding: 30px 100px;
 }
 
 .new_line input.tf {
@@ -49,11 +49,12 @@
   font-weight: bold;
   text-shadow: 0 0 2px #fff;
   border: solid 3px;
-  padding: 20px;
+  padding: 40px;
   display: block;
   width: 90%;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  margin-top: 10px;
   border-color: #ccc;
 }
 
