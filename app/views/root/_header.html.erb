@@ -8,6 +8,7 @@
     <% if session.has_key?(:user_id) %>
       <%=button_to "Logout", logout_path, :method => 'delete' %>
     <% elsif request.fullpath != login_path %>
+      <%=button_to "New User", new_user_path, :method => 'get' %>
       <%=render 'sessions/form' %>
     <% end %>
 
