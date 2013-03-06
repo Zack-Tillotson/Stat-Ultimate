@@ -17,7 +17,6 @@ body {
 }
 
 .bg {
-  background: url('/grass-sky.jpg');
   position: absolute;
   top: 0;
   left: 0;
@@ -28,7 +27,7 @@ body {
 
 header {
   font-size: 30px;
-  background-color: rgba(200, 200, 200, .8);
+  background-color: rgba(220, 220, 220, .8);
   border-bottom: solid 3px black;
   margin-bottom: 10px;
   padding: 10px 0 10px 20px;

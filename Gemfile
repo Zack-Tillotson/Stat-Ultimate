@@ -38,3 +38,4 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 gem 'therubyracer', require: "v8"
+gem 'bcrypt-ruby'
