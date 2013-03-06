@@ -1,0 +1,14 @@
+  <header>
+  <a href="/">Home</a>
+
+    <% if defined? @team %>
+      <%=link_to @team.name, @team %>
+    <% end %>
+
+    <% if session.has_key?(:user_id) %>
+      <%=button_to "Logout", logout_path, :method => 'delete' %>
+    <% elsif request.fullpath != login_path %>
+      <%=render 'sessions/form' %>
+    <% end %>
+
+  </header>

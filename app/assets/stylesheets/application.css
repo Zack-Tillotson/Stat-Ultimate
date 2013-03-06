@@ -69,3 +69,10 @@ header {
   line-height: 40px;
   display: block;
 }
+
+header .login-form {
+  display: inline-block;
+  font-size: 15px;
+  margin-right: 20px;
+  float: right;
+}

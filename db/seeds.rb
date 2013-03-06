@@ -5,7 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-t = Team.create({name: 'Strangers'})
+u = User.create({name: 'test', password: 'test', password_confirmation: 'test'})
+t = Team.create({name: 'Strangers', user_id: u.id})
 p = Player.create([
     {name: 'alice', team_id: t.id},
    {name: 'bob', team_id: t.id},
@@ -37,3 +38,6 @@ p = Player.create([
     }
   end
 }
+
+u2 = User.create({name: 'test2', password: 'test', password_confirmation: 'test'})
+t2 = Team.create({name: 'Other', user_id: u2.id})
