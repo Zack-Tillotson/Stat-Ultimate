@@ -1,8 +1,12 @@
   <header>
   <a href="/">Home</a>
 
+    <% if defined? @user %>
+      <span class="user"><%= @user.name %></span>
+    <% end %>
+
     <% if defined? @team %>
-      <%=link_to @team.name, @team %>
+      <%=link_to @team.name, @team, :class => "team" %>
     <% end %>
 
     <% if session.has_key?(:user_id) %>

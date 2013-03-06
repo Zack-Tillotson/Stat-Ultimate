@@ -70,9 +70,9 @@ header {
   display: block;
 }
 
-header .login-form {
+header form {
   display: inline-block;
+  float: right;
   font-size: 15px;
   margin-right: 20px;
-  float: right;
 }
