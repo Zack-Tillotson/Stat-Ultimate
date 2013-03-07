@@ -1,7 +1,7 @@
   <header>
     <a href="/"><img src="" alt="Home" /></a>
 
-    <% if defined? @team %>
+    <% if defined? @team and @team.name %>
       <%=link_to @team.name, @team, :class => "team" %>
     <% end %>
 

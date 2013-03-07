@@ -49,6 +49,7 @@ class TeamsController < ApplicationController
   # POST /teams.json
   def create
     @team = Team.new(params[:team])
+    @team.user_id = session[:user_id];
 
     respond_to do |format|
       if @team.save
