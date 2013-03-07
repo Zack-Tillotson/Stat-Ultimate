@@ -8,6 +8,9 @@
   </ul>
 </div>
 <div class="fp-link">
-  <%= link_to "New Team", new_team_path, :class => "link" %>
-  <%= link_to "Existing Teams", teams_path, :class => "link" %>
+  <% if !@user %>
+    <%= link_to "Sign Up", new_user_path, :class => "link" %>
+  <% else %>
+    <%= link_to "Teams", teams_path, :class => "link" %>
+  <% end %>
 </div>

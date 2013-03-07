@@ -16,3 +16,4 @@
 public/.htaccess
 public/core
 public/dispatch.fcgi
+nohup.out

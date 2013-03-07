@@ -72,7 +72,11 @@ header {
 
 header form {
   display: inline-block;
+}
+
+div.user-info {
   float: right;
-  font-size: 15px;
+  font-size: 25px;
+  font-weight: bold;
   margin-right: 20px;
 }

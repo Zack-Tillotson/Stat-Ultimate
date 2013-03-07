@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Team: <%= @team.name %></h1>
-
+<%= link_to "New Game", new_team_game_path(@team), :class => "new-game" %>
+<%= link_to 'Review Team', review_team_path(@team), :class => "link" %>
+<%= link_to 'Edit', edit_team_path(@team), :class => "link" %>
 <div class="game-list">
-  <%= link_to "New Game", new_team_game_path(@team), :class => "new-game" %>
   <ul>
     <% @team.games.reverse.each_with_index do |g,i| %>
       <li><%= render 'games/short_game_info', :game => g, :index => i %></li>
@@ -11,5 +11,3 @@
   </ul>
 </div>
 
-<%= link_to 'Review Team', review_team_path(@team), :class => "link" %>
-<%= link_to 'Edit', edit_team_path(@team), :class => "link" %>
