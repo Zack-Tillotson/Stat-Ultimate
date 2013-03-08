@@ -4,11 +4,13 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: sqlite3
+  adapter: mysql2
   pool: 5
   timeout: 5000
-  host: localhost
-  database: db/development.sqlite3
+  host: mysql.laowaigonewild.com
+  username: statultimate
+  password: p7peeseven
+  database: statultimate
 
 
 # Warning: The database defined as "test" will be erased and
@@ -21,7 +23,11 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql2
   pool: 5
   timeout: 5000
+  host: mysql.laowaigonewild.com
+  username: statultimate
+  password: p7peeseven
+  database: statultimate
+
