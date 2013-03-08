@@ -1,9 +1,10 @@
   <header>
-    <a href="/"><img src="" alt="Home" /></a>
-
-    <% if defined? @team and @team.name %>
-      <%=link_to @team.name, @team, :class => "team" %>
-    <% end %>
+    <div class="site-info-">
+      <a href="/">Ultimate Stats</a> | 
+      <% if defined? @team and @team.name %>
+        <%=link_to @team.name, @team, :class => "link" %>
+      <% end %>
+    </div>
 
     <div class="user-info">
       <% if session.has_key?(:user_id) %>

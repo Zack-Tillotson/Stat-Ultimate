@@ -14,27 +14,13 @@
 
 body {
   margin: 0px;
-}
-
-.bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  /*background-color: #F2F2F2;*/
-  background: url('/bg.png') repeat-x white;
-}
-
-.bg:after {
-  content: ' ';
-  background-color: #26FF79;
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  height: 1px;
-  box-shadow: 0 -5px 15px 25px rgba(38,255,120,.5);
+  background-color: #666;
 }
 
 .content {
@@ -43,8 +29,9 @@ body {
   width: 960px;
   padding: 20px 30px;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, .8);
-  border: solid 2px #555;
+  background-color: rgba(255, 255, 255, 1);
+  border: solid 3px #333;
+  box-shadow: 0 0 2px 5px rgba(0,0,0,1);
 }
 
 .how-to {
@@ -85,6 +72,7 @@ body {
   line-height: 40px;
   display: block;
   padding: 20px;
+  text-align: center;
 }
 
 header {
@@ -94,7 +82,7 @@ header {
   border-bottom: 2px solid #555;
   margin: 1px 0px 10px 0px;
   padding: 10px 0px 10px 20px;
-  box-shadow: 0 0px 5px 5px rgba(255,255,255,.5);
+  box-shadow: 0 0px 5px 5px rgba(0,0,0,.5);
   position: relative;
 }
 
@@ -107,5 +95,5 @@ div.user-info {
   font-size: 25px;
   font-weight: bold;
   right: 20px;
-  top: 18px;
+  top: 10px;
 }

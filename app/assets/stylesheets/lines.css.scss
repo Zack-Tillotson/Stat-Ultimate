@@ -81,3 +81,12 @@
 .new_line input.tf:not(:checked) + label.scored:before {
   content: 'They Scored';
 }
+
+.link.undo {
+  float: right;
+  margin-right: 50px;
+  margin-top: 50px;
+  padding: 40px;
+  background-color: #333;
+  color: white;
+}

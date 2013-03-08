@@ -23,3 +23,23 @@ a#new-team {
 .team .destroy {
   float: right;
 }
+
+.new_team, .edit_team {
+  font-size: 25px;
+}
+
+.new_team label, .edit_team label { 
+  width: 150px;
+  display: inline-block;
+}
+
+input[type=text] {
+  font-size: 20px;
+}
+
+input[type=submit] {
+  padding: 5px;
+  font-size: 25px;
+  border-radius: 5px;
+  border: solid 1px #555;
+}

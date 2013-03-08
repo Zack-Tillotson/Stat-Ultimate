@@ -15,6 +15,9 @@ h1.game {
 
 .short {
   font-size: 20px;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  margin: 1px;
 }
 
 .short .winning {
@@ -70,4 +73,8 @@ h1.game {
 
 .player-box {
   text-align: center;
+}
+
+.link.review {
+  float: right;
 }
