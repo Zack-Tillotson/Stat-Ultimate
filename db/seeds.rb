@@ -8,26 +8,26 @@
 u = User.create({name: 'test', password: 'test', password_confirmation: 'test'})
 t = Team.create({name: 'Strangers', user_id: u.id})
 p = Player.create([
-    {name: 'alice', team_id: t.id},
-   {name: 'bob', team_id: t.id},
-   {name: 'charlie', team_id: t.id},
-   {name: 'delta', team_id: t.id},
-   {name: 'echo', team_id: t.id},
-   {name: 'foxtrot', team_id: t.id},
-   {name: 'global', team_id: t.id},
-   {name: 'harry', team_id: t.id},
-   {name: 'incontrol', team_id: t.id},
-   {name: 'lemon', team_id: t.id},
-   {name: 'mortimer', team_id: t.id},
-   {name: 'nifty', team_id: t.id},
-   {name: 'oscar', team_id: t.id},
-   {name: 'prego', team_id: t.id},
-   {name: 'quickly', team_id: t.id},
-   {name: 'ricky', team_id: t.id},
-   {name: 'stacy', team_id: t.id},
-   {name: 'tilly', team_id: t.id},
-   {name: 'under', team_id: t.id},
-   {name: 'vergo', team_id: t.id}
+   {name: 'Alice', team_id: t.id},
+   {name: 'Bob', team_id: t.id},
+   {name: 'Charlie', team_id: t.id},
+   {name: 'Donna', team_id: t.id},
+   {name: 'Erik', team_id: t.id},
+   {name: 'Fiorella', team_id: t.id},
+   {name: 'GOB', team_id: t.id},
+   {name: 'Harold', team_id: t.id},
+   {name: 'Inga', team_id: t.id},
+   {name: 'Leo', team_id: t.id},
+   {name: 'Mary', team_id: t.id},
+   {name: 'Nancy', team_id: t.id},
+   {name: 'Oscar', team_id: t.id},
+   {name: 'Pam', team_id: t.id},
+   {name: 'Quin', team_id: t.id},
+   {name: 'Ricky', team_id: t.id},
+   {name: 'Stacy', team_id: t.id},
+   {name: 'Tilly', team_id: t.id},
+   {name: 'Zack', team_id: t.id},
+   {name: 'Virgina', team_id: t.id}
 ])
 (1..10).each { |i|
   ActiveRecord::Base.transaction do
