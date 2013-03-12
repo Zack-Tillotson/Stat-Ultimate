@@ -1,13 +1,4 @@
-<div class="how-to">
-  <div class="big">Track Ultimate Stats</div>
-  <img src="/graph.png" alt="Graph Image"/>
-  <div class="small">View every player's +/- for both offense and defense.</div>
-</div>
-<div class="how-to">
-  <img src="/mobile.png" alt="Mobile Image"/>
-  <div class="big">Easy To Use</div>
-  <div class="small">Use your phone to enter the game data as it's being played.</div>
-</div>
+<%= render 'carousel' %>
 <div class="fp-link">
   <% if !@user %>
     <%= link_to "Sign Up", new_user_path, :class => "link" %>
