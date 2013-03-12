@@ -1,8 +1,8 @@
   <header>
-    <div class="site-info-">
-      <a href="/">Ultimate Stats</a> | 
+    <div class="site-info">
+      <a href="/">Ultimate Stats</a>
       <% if defined? @team and @team.name %>
-        <%=link_to @team.name, @team, :class => "link" %>
+        | <%=link_to @team.name, @team, :class => "link" %>
       <% end %>
     </div>
 

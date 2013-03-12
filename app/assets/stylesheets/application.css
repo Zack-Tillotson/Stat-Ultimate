@@ -84,6 +84,7 @@ header {
   padding: 10px 0px 10px 20px;
   box-shadow: 0 0px 5px 5px rgba(0,0,0,.5);
   position: relative;
+  height: 40px;
 }
 
 header form {
@@ -96,4 +97,8 @@ div.user-info {
   font-weight: bold;
   right: 20px;
   top: 10px;
+}
+
+div.site-info {
+  margin-top: 10px;
 }
