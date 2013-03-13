@@ -29,10 +29,11 @@
   background-color: #666;
   border: solid 1px #000;
 }
-  
 
 .carousel div.item img {
   z-index: -999;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
 }
 
 .carousel div.item h2 {
@@ -40,24 +41,25 @@
   top: 10px;
   left: 20px;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 60px;
   color: black;
   text-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 0.50);
+  background: rgba(255, 255, 255, 0.80);
   border-radius: 15px;
   border: solid 2px #666;
-  padding: 10px;
+  padding: 15px;
 }
 
 .carousel div.item ul {
   position: absolute;
   bottom: 10px;
   left: 100px;
-  font-size: 20px;
+  font-size: 30px;
   color: black;
   text-shadow: 0px 0px 20px rgba(255, 255, 255, 1);
-  background: rgba(255, 255, 255, 0.50);
+  background: rgba(255, 255, 255, 0.80);
   border-radius: 15px;
   border: solid 2px #666;
-  padding: 10px;
+  padding: 15px;
+  list-style-position: inside;
 }
