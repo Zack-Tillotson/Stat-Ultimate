@@ -30,6 +30,11 @@
   border: solid 1px #000;
 }
 
+.carousel div.item {
+  min-height: 900px;
+  background-color: #ccc;
+}
+
 .carousel div.item img {
   z-index: -999;
   border-top: solid 2px black;
