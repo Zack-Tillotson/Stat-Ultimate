@@ -1,5 +1,5 @@
 <tr>
-  <td><%= link_to player.name, player %></td>
+  <td><%= link_to "»", player, :class => "subtle-link" %> <%= player.name %> </td>
   <td class="number total"><%= player.points_played({:game_id => game_id})%></td>
   <td class="number total"><%= player.points_played({:scored => true, :game_id => game_id})%></td>
   <td class="number total"><%= player.points_played({:scored => false, :game_id => game_id})%></td>

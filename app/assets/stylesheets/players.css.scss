@@ -19,7 +19,6 @@
 .player-stats td {
   font-size: 15px;
   border: solid 1px #ccc;
-  padding: 5px;
 }
 
 table .player {
@@ -69,10 +68,21 @@ table.lines td {
   border: solid 1px #ccc;
 }
 
+table.lines td.name {
+  text-align: left;
+}
+
 table td.us {
   background-color: #9ACFFC;
 }
 
 table td.them {
   background-color: #F2B8B8;
+}
+
+.subtle-link {
+background: #ccc;
+padding: 1px 5px;
+border-radius: 5px;
+border: solid 1px #555;
 }

@@ -26,7 +26,7 @@ class GamesController < ApplicationController
   end
 
   def review 
-    @game = Game.find(params[:id])
+    @game = Game.includes(:lines => [:players], :team => [:players => :lines]).find(params[:id])
     @team = @game.team
     @lines = @game.lines
     @players = @team.players

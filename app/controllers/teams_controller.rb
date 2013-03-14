@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 
   def review
-    @team = Team.find(params[:id])
+    @team = Team.includes(:games => [:lines], :players => [:lines]).find(params[:id])
     respond_to do |format|
       format.html
     end
@@ -21,7 +21,7 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
-    @team = Team.find(params[:id])
+    @team = Team.includes(:games => [:lines]).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
