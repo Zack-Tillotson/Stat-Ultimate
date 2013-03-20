@@ -80,16 +80,19 @@
       div.on-field span.name {
         -webkit-flex: 1;
         flex: 2;
+        font-size: 1em;
       }
       
       div.on-field span.button {
         font-size: 1em;
+        font-size: .5em;
       }
       
       span.button {
         background-color: #ccc;
         border-radius: 8px;
-        margin: 3px;
+        margin: .1em;
+        padding: .3em;
         line-height: 1em;
         text-align: center;
       }
@@ -109,16 +112,16 @@
       }
       
       div.players {
-        display: flex;
         display: -webkit-flex;
         -webkit-flex-wrap: wrap;
+        display: flex;
         flex-wrap: wrap;
       }
       
       div.players span.name {
         background-color: #ccc;
         border: solid 3px #888;
-        margin: 5px;
+        margin: .1em;
         width: auto;
         -webkit-flex: 1 0;
         flex: 1 0;
@@ -183,29 +186,43 @@
     <h2>Players</h2>
     <div class="players">
       <span class="name">Alice</span>
-      <span class="name">Bob</span>
       <span class="name">Charlie</span>
       <span class="name">Daisy</span>
+    </div>
+    <div class="players">
       <span class="name">Erin</span>
-      <span class="name">Fred</span>
-      <span class="name">Galileo</span>
       <span class="name">Harry</span>
       <span class="name">Alice</span>
+    </div>
+    <div class="players">
       <span class="name">Bob</span>
       <span class="name">Charlie</span>
-      <span class="name">Daisy</span>
       <span class="name">Erin</span>
+    </div>
+    <div class="players">
       <span class="name">Fred</span>
-      <span class="name">Galileo</span>
       <span class="name">Harry</span>
+      <span class="name">Fred</span>
+    </div>
+    <div class="players">
       <span class="name">Alice</span>
       <span class="name">Bob</span>
-      <span class="name">Charlie</span>
       <span class="name">Daisy</span>
+    </div>
+    <div class="players">
       <span class="name">Erin</span>
       <span class="name">Fred</span>
       <span class="name">Galileo</span>
+    </div>
+    <div class="players">
+      <span class="name">Galileo</span>
       <span class="name">Harry</span>
+      <span class="name">Charlie</span>
+    </div>
+    <div class="players">
+      <span class="name">Daisy</span>
+      <span class="name">Galileo</span>
+      <span class="name">Bob</span>
     </div>
     <div class="scores">
       <span class="us button">We Scored</span>
