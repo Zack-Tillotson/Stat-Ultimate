@@ -5,7 +5,7 @@
       body {
         margin: 0;
         padding: 0;
-        font-size: 50px;
+        font-size: 1.5em;
       }
 
       span {
@@ -45,8 +45,8 @@
       }
       
       h2 {
-        font-size: 60px;
-        margin: 15px 0 0 0;
+        font-size: 1.2em;
+        margin: 0 0 0 0;
         padding: 0px;
         text-align: center;
       }
@@ -55,7 +55,7 @@
         display: -webkit-flex;
         display: flex;
         border-bottom: solid 3px #888;
-        font-size: 70px;
+        font-size: 1.5em;
       }
       
       div.game-info span {
@@ -83,19 +83,21 @@
       }
       
       div.on-field span.button {
-        font-size: 30px;
+        font-size: 1em;
       }
       
       span.button {
         background-color: #ccc;
-        border: solid 3px #eee;
         border-radius: 8px;
+        margin: 3px;
+        line-height: 1em;
+        text-align: center;
       }
       
       div.scores {
         display: -webkit-flex;
         display: flex;
-        font-size: 70px;
+        font-size: 1.5em;
       }
       
       div.scores span.us {
@@ -115,12 +117,11 @@
       
       div.players span.name {
         background-color: #ccc;
-        border: solid 3px #eee;
+        border: solid 3px #888;
         margin: 5px;
         width: auto;
-        min-width: 150px;
-        -webkit-flex: 1 1 150px;
-        flex: 1 1 150px;
+        -webkit-flex: 1 0;
+        flex: 1 0;
       }
       
     </style>
@@ -128,7 +129,6 @@
   <body>
     <header>
       <span class="logo">LOGO!</span>
-      <span class="player">User</span>
       <span class="team">Strangers 2013</span>
       <span class="game">BCW RRG1 Otherteam</span>
     </header>
