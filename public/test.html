@@ -18,12 +18,29 @@ header {
   display: flex;
   background-color: #ccc;
   border-bottom: 2px #333 solid;
+  overflow: hidden;
 }
 
 header span {
   display: block;
   overflow: hidden;
   white-space: nowrap;
+}
+
+header .logo {
+  background-color: rgb(126, 126, 173);
+}
+
+header .player {
+  background-color: rgb(72, 72, 179);
+}
+
+header .team {
+  background-color: rgb(95, 95, 129);
+}
+
+header .game {
+  background-color: rgb(116, 116, 121);
 }
 
 h2 {
@@ -60,8 +77,12 @@ div.on-field {
 }
 
 div.on-field span.name {
-  -webkit-flex: 2;
+  -webkit-flex: 1;
   flex: 2;
+}
+
+div.on-field span.button {
+  font-size: 30px;
 }
 
 span.button {
@@ -106,7 +127,7 @@ div.players span.name {
   <body>
     <header>
       <span class="logo">LOGO!</span>
-      <span class="player">Welcome User.</span>
+      <span class="player">User</span>
       <span class="team">Strangers 2013</span>
       <span class="game">BCW RRG1 Otherteam</span>
     </header>
