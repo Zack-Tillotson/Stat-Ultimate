@@ -126,8 +126,17 @@
         -webkit-flex: 1 0;
         flex: 1 0;
       }
-      
+
+      div.players span.clicked {
+        background-color: green;
+      }
+
     </style>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+      $(function() {$('div.players span.name').click(function(){console.log("Clicked a name!", $(this));$(this).toggleClass('clicked');})});
+    </script>
+    
   </head>
   <body>
     <header>
