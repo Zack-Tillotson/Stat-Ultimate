@@ -8,7 +8,7 @@ StatUltimate::Application.routes.draw do
 
   resources :users, :only => [:new, :create, :delete, :update]
 
-  resources :players, :only => [:create, :delete, :update] do # Created from team screen
+  resources :players, :only => [:show, :create, :delete, :update] do # Created from team screen
     member do
       get 'graph'
     end

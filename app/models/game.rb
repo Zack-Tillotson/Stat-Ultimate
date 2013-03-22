@@ -11,4 +11,5 @@ class Game < ActiveRecord::Base
   def their_score()
     (lines.select { |l| !l.scored? }).length
   end
+
 end

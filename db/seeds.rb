@@ -35,6 +35,12 @@ p = Player.create([
     (1..25).each { |j|
       l = Line.create({received: rand(2), scored: rand(2), active: 0, game_id: g.id})
       p.shuffle.slice(1..7).each { |pl| l.players << pl }
+      l.line_players.each { |lp|
+        lp.throwaway = rand(3)
+        lp.drop = rand(3)
+        lp.takeaway = rand(3)
+        lp.save()
+      }
     }
   end
 }
