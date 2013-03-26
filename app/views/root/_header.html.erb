@@ -4,7 +4,7 @@
       <a href="/">Ultimate Stats</a>
     </div>
 
-    <div class="bread-crumbs">
+    <div class="nav-info">
       <%=link_to "Home", root_url %>
       <% if defined? @team and @team.name %>
         <%=link_to @team.name, @team %>
@@ -24,6 +24,14 @@
           <span>or</span>
           <%=render 'sessions/form' %>
         </div>
+      <% end %>
+    </div>
+
+    <div class="view-info">
+      <% if is_mobile_request? %>
+        In mobile view, <%= link_to "Desktop View", root_path %>
+      <% elsif request_device?(:iphone) or request_device?(:android) %>
+        In desktop view, <%= link_to "Mobile View", root_path %>
       <% end %>
     </div>
 

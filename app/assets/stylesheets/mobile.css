@@ -11,5 +11,4 @@
  *= require_tree ./mobile/
  *= require_tree ./general/
  *= require_self
- *= require bootstrap.min
  */

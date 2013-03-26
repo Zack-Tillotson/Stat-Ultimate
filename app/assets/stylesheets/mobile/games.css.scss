@@ -14,10 +14,8 @@ h1.game {
 }
 
 .short {
-  font-size: 20px;
-  border: solid 1px #ccc;
-  border-radius: 5px;
-  margin: 1px;
+  border-bottom: solid 1px #ccc;
+  border-top: solid 1px #ccc;
 }
 
 .short .winning {
@@ -35,26 +33,9 @@ h1.game {
   border-radius: 5px;
 }
 
-.short a:link {
-  text-decoration: none;
-  color: #222;
-}
-
-.short a:hover {
-  text-decoration: underline;
-  background-color: #fff;
-}
-
-.short .name {
-  width: 400px;
-  display: inline-block;
-}
-
 .short .score {
-  font-size: 20px;
   font-weight: bold;
   text-align: right;
-  width: 30px;
   display: inline-block;
   overflow: none;
 }
