@@ -1,0 +1,45 @@
+// Place all the styles related to the Teams controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a#new-team {
+  width: 50%;
+  margin-top: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.team {
+  font-size: 30px;
+  border: solid 2px #555;
+  width: 80%;
+  border-radius: 5px;
+  margin: 5px auto;
+  padding: 10px;
+}
+
+.team .destroy {
+  float: right;
+}
+
+.new_team, .edit_team {
+  font-size: 25px;
+}
+
+.new_team label, .edit_team label { 
+  width: 150px;
+  display: inline-block;
+}
+
+input[type=text] {
+  font-size: 20px;
+}
+
+input[type=submit] {
+  padding: 5px;
+  font-size: 25px;
+  border-radius: 5px;
+  border: solid 1px #555;
+}

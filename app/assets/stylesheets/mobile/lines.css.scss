@@ -1,0 +1,92 @@
+// Place all the styles related to the Lines controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_line label.player {
+  font-size: 30px;
+  display: inline-block;
+  padding: 20px;
+  border: solid 3px;
+  position: relative;
+  width: 35%;
+  text-align: center;
+}
+
+.new_line input.player {
+  display: none;
+}
+
+.new_line input.player:not(:checked) + label.player {
+  border-color: #737373;
+  background-color: #ccc;
+  color: #000;
+  text-shadow: 0 0 5px white;
+}
+
+.new_line input.player:checked + label.player {
+  border-color: #00ab03;
+  background-color: #B8F2B8;
+  color: #000000;
+  text-shadow: 0 0 3px white;
+}
+
+.new_line input[type=submit] {
+  font-size: 30px;
+  background-color: #B06A1A;
+  border: solid 3px #000;
+  margin-top: 50px;
+  font-weight: bold;
+  text-shadow: 0 0 2px #fff;
+  padding: 30px 100px;
+}
+
+.new_line input.tf {
+  display: none;
+}
+
+.new_line input.tf + label.tf {
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 0 2px #fff;
+  border: solid 3px;
+  padding: 40px;
+  display: block;
+  width: 90%;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  border-color: #ccc;
+}
+
+.new_line input.tf:checked + label.tf {
+  background-color: #87C1D4;
+}
+
+.new_line input.tf:not(:checked) + label.tf {
+  background-color: #FF7D7D;
+}
+
+.new_line input.tf:checked + label.received:before {
+  content: 'Received';
+}
+
+.new_line input.tf:not(:checked) + label.received:before {
+  content: 'Pulled';
+}
+
+.new_line input.tf:checked + label.scored:before {
+  content: 'We Scored';
+}
+
+.new_line input.tf:not(:checked) + label.scored:before {
+  content: 'They Scored';
+}
+
+.link.undo {
+  float: right;
+  margin-right: 50px;
+  margin-top: 50px;
+  padding: 40px;
+  background-color: #333;
+  color: white;
+}

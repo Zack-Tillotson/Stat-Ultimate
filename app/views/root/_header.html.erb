@@ -2,8 +2,12 @@
 
     <div class="site-info">
       <a href="/">Ultimate Stats</a>
+    </div>
+
+    <div class="bread-crumbs">
+      <%=link_to "Home", root_url %>
       <% if defined? @team and @team.name %>
-        | <%=link_to @team.name, @team, :class => "link" %>
+        <%=link_to @team.name, @team %>
       <% end %>
     </div>
 
@@ -12,8 +16,14 @@
         <span class="user">Welcome <%= @user.name %>!</span>
         <%=button_to "Logout", logout_path, :method => 'delete' %>
       <% elsif request.fullpath != login_path %>
-        <%=button_to "New User", new_user_path, :method => 'get' %>
-        <%=render 'sessions/form' %>
+        <div class="new-account-question">
+          <span>New to Ultimate Stats?</span>
+          <%=button_to "Create Account", new_user_path, :method => 'get' %>
+        </div>
+        <div class="login-question">
+          <span>or</span>
+          <%=render 'sessions/form' %>
+        </div>
       <% end %>
     </div>
 

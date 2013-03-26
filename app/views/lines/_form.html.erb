@@ -22,6 +22,6 @@
   </div>
   <%= f.check_box :scored, :class => "tf scored" %>
   <label class="tf scored" for="line_scored"></label>
-  <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Are you sure?' }, :class => "link undo" %>
+  <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Are you sure?' }, :class => "undo" %>
   <%= f.submit "Submit" %>
 <% end %>

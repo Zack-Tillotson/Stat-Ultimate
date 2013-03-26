@@ -1,0 +1,88 @@
+// Place all the styles related to the Players controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.player-stats {
+  width: 95%;
+  margin: 20px;
+  border-collapse: collapse;
+  margin: 10px auto;
+}
+
+.player-stats thead td {
+  font-weight: bold;
+  border-bottom: solid 3px #000;
+}
+
+.player-stats tbody {
+}
+
+.player-stats td {
+  font-size: 15px;
+  border: solid 1px #ccc;
+}
+
+table .player {
+  text-align: left;
+}
+
+.player-stats td.number {
+  text-align: right;
+}
+
+.player-stats td.total {
+  background-color: #ddd;
+}
+
+.player-stats td.offense {
+  background-color: #F2B8B8;
+}
+
+.player-stats td.defense {
+  background-color: #9ACFFC;
+}
+
+div.graph {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.lines {
+  border-collapse: collapse;
+  font-size: 15px;
+  width: 95%;
+  text-align: center;
+  margin: 10px auto;
+}
+
+table.lines thead td {
+  border-bottom: solid 1px black;
+}
+
+table.lines thead {
+  border-bottom: solid 2px;
+  font-weight: bold;
+}
+
+table.lines td {
+  border: solid 1px #ccc;
+}
+
+table.lines td.name {
+  text-align: left;
+}
+
+table td.us {
+  background-color: #9ACFFC;
+}
+
+table td.them {
+  background-color: #F2B8B8;
+}
+
+.subtle-link {
+background: #ccc;
+padding: 1px 5px;
+border-radius: 5px;
+border: solid 1px #555;
+}

@@ -2,9 +2,9 @@
 
 <% @teams.each_with_index do |team,index| %>
   <div class="team">
-    <%= link_to team.name, team, :class => "link" %>
-    <%= link_to 'Delete', team, method: :delete, data: { confirm: 'Are you sure? This is irreversible!' }, :class => "link warning destroy"  %>
+    <%= link_to team.name, team %>
+    <%= link_to 'Delete', team, method: :delete, data: { confirm: 'Are you sure? This is irreversible!' }, :class => "warning destroy"  %>
   </div>
 <% end %>
 
-<%= link_to 'New Team', new_team_path, :class => "link", :id => "new-team" %>
+<%= link_to 'New Team', new_team_path, :id => "new-team" %>
