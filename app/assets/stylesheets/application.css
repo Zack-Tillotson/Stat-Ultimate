@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  * = require bootstrap.min
- *= require_tree ./desktop/
- *= require_tree ./general/
+ *= require_tree ./desktop
+ *= require_tree ./general
  *= require_self
  */
