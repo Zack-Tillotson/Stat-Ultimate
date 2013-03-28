@@ -11,15 +11,16 @@ body {
 
 .content {
   width: 100%;
+  padding: 1em;
 }
 
 header.site-header {
   border-bottom: 2px solid #555;
   margin: 0;
-  padding: .25em;
+  padding: .5em;
   box-shadow: 0 0 .5em .5em rgba(0,0,0,.5);
-  margin-bottom: .5em;
   position: relative;
+  text-align: center;
 }
 
 header form {
@@ -27,19 +28,13 @@ header form {
 }
 
 div.site-info {
-  width: 100%;
+  position: absolute;
+  left: .5em;
+  top: .5em;
 }
 
-div.user-info {
-  right: .5em;
-  top: .25em;
-}
-
-div.site-info {
-}
-
-div.user-info {
-  display: inline;
+div.nav-items {
+  display: inline-block;
 }
 
 footer {
@@ -66,11 +61,24 @@ a:link {
   text-decoration: none;
   padding: .25em;
   background-color: #ccc;
-  border: .1em outset #555;
+  border: outset 2px #555;
   border-radius: .5em;
   color: black;
 }
 
 a:visited {
+  text-decoration: none;
+  padding: .25em;
+  background-color: #ccc;
+  border: outset 2px #555;
+  border-radius: .5em;
   color: black;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  display: block;
 }

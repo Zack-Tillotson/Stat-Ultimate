@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1.game {
-  font-size: 30px;
-}
-
 .big-score {
   font-size: 40px;
   font-weight: bold;
@@ -13,9 +9,10 @@ h1.game {
   padding: 10px;
 }
 
-.short {
-  border-bottom: solid 1px #ccc;
+.short span.name {
   border-top: solid 1px #ccc;
+  display: inline-block;
+  min-width: 50%;
 }
 
 .short .winning {
@@ -29,8 +26,9 @@ h1.game {
 .short .winning, .short .losing {
   display: inline-block;
   padding: 5px 10px;
-  border: solid 1px black;
   border-radius: 5px;
+  width: 3em;
+  text-align: center;
 }
 
 .short .score {
@@ -54,8 +52,4 @@ h1.game {
 
 .player-box {
   text-align: center;
-}
-
-.link.review {
-  float: right;
 }

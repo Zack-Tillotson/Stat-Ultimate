@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_team_path(@team) %>
+<%= link_to 'Delete', team, method: :delete, data: { confirm: 'Are you sure? This is irreversible!' }, :class => "warning destroy"  %>
 <%= link_to "New Game", new_team_game_path(@team), :class => "new-game-link" %>
 <%= link_to 'Review Team', review_team_path(@team), :class => "review" %>
 <div class="game-list">

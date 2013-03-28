@@ -1,0 +1,24 @@
+<table class="player-stats">
+  <thead>
+    <tr>
+      <td>Player</td>
+      <td class="number">Lines</td>
+      <td class="number">+/-</td>
+      <td class="number">Avg Throw Aways</td>
+      <td class="number">Avg Drops</td>
+      <td class="number">Avg Take Aways</td>
+    </tr>
+  </thead>
+  <tbody>
+  <% players.each do |p| %>
+    <tr>
+      <td><%= link_to "»", p %> <%= p.name %> </td>
+      <td class="number"><%= p.points_played()%></td>
+      <td class="number"><%= p.points_played({:scored => true}) - p.points_played({:scored => false})%></td>
+      <td class="number"><%= p.throw_aways() / p.points_played() %></td>
+      <td class="number"><%= p.drops() / p.points_played() %></td>
+      <td class="number"><%= p.take_aways() / p.points_played() %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

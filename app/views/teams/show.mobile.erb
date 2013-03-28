@@ -1,13 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_team_path(@team) %>
+<h1><%= @team.name %></h1>
 <%= link_to "New Game", new_team_game_path(@team), :class => "new-game-link" %>
-<%= link_to 'Review Team', review_team_path(@team), :class => "review" %>
-<div class="game-list">
+<%= link_to 'Edit Team', edit_team_path(@team) %>
+<%= link_to 'Delete Team', @team, method: :delete, data: { confirm: 'Are you sure? This is irreversible!' }, :class => "warning destroy"  %>
+<h2 id="game-list-label">Games</h2>
+<div class="game-list subsection">
   <ul>
     <% @team.games.reverse.each_with_index do |g,i| %>
       <li><%= render 'games/short_game_info', :game => g, :index => i %></li>
     <% end %>
   </ul>
 </div>
-
+<h2 id="player-list-label">Players</h2>
+<div class="player-list subsection">
+  <%= render 'players/basic_stats', :players => @team.players %>
+</div>
+<h2 id="stat-list-label">Stats</h2>
+<div class="stat-list subsection">
+  <ul>
+  </ul>
+</div>

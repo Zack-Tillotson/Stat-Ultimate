@@ -3,12 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .player-stats {
   width: 95%;
-  margin: 20px;
   border-collapse: collapse;
-  margin: 10px auto;
 }
 
 .player-stats thead td {
+  font-size: .75em;
   font-weight: bold;
   border-bottom: solid 3px #000;
 }
@@ -17,8 +16,9 @@
 }
 
 .player-stats td {
-  font-size: 15px;
   border: solid 1px #ccc;
+  line-height: 3em;
+  background-color: #f3f3f3;
 }
 
 table .player {
@@ -30,7 +30,7 @@ table .player {
 }
 
 .player-stats td.total {
-  background-color: #ddd;
+  background-color: #eee;
 }
 
 .player-stats td.offense {
