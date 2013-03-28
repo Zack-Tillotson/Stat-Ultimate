@@ -11,12 +11,17 @@ a#new-team {
   padding: 10px;
 }
 
-.team {
-  border: solid 2px #555;
-  width: 80%;
-  border-radius: 5px;
-  margin: 5px auto;
-  padding: 10px;
+.teams {
+  font-size: large;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  min-height: 20em;
+  width: 100%;
+}
+
+.teams a {
+  -webkit-flex: 1;
+  margin: .25em;
 }
 
 .team .destroy {
@@ -24,7 +29,6 @@ a#new-team {
 }
 
 .new_team, .edit_team {
-  font-size: 25px;
 }
 
 .new_team label, .edit_team label { 
@@ -42,3 +46,4 @@ input[type=submit] {
   border-radius: 5px;
   border: solid 1px #555;
 }
+

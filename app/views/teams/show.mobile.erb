@@ -12,7 +12,9 @@
 </div>
 <h2 id="player-list-label">Players</h2>
 <div class="player-list subsection">
-  <%= render 'players/basic_stats', :players => @team.players %>
+  <% @team.players.each_with_index do |p,i| %>
+    <%= link_to p.name, p, :class => "color#{i % 10 +1}" %>
+  <% end %>
 </div>
 <h2 id="stat-list-label">Stats</h2>
 <div class="stat-list subsection">

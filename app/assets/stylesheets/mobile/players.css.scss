@@ -1,6 +1,18 @@
 // Place all the styles related to the Players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.player-list {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+}
+
+.player-list a {
+  -webkit-flex: 1 0 4em;
+  margin: .15em;
+}
+
 .player-stats {
   width: 95%;
   border-collapse: collapse;

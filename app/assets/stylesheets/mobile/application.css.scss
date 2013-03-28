@@ -7,11 +7,12 @@ html {
 body {
   padding: 0;
   margin: 0;
+  background-color: #eee;
 }
 
 .content {
-  width: 100%;
-  padding: 1em;
+  width: 90%;
+  padding: 5%;
 }
 
 header.site-header {
@@ -21,6 +22,7 @@ header.site-header {
   box-shadow: 0 0 .5em .5em rgba(0,0,0,.5);
   position: relative;
   text-align: center;
+  background-color: #888;
 }
 
 header form {
@@ -60,19 +62,19 @@ footer div.inside {
 a:link {
   text-decoration: none;
   padding: .25em;
-  background-color: #ccc;
+  background-color: #666;
   border: outset 2px #555;
-  border-radius: .5em;
-  color: black;
+  color: white;
+  text-align: center;
 }
 
 a:visited {
   text-decoration: none;
   padding: .25em;
-  background-color: #ccc;
+  background-color: #666;
   border: outset 2px #555;
-  border-radius: .5em;
-  color: black;
+  color: white;
+  text-align: center;
 }
 
 ul {
@@ -81,4 +83,47 @@ ul {
 
 li {
   display: block;
+}
+
+h1 {
+  font-size: larger;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+h2 {
+  font-size: large;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+
+a.color1 {
+  background-color: #aaa;
+}
+a.color2 {
+  background-color: #333;
+}
+a.color3 {
+  background-color: #666;
+}
+a.color4 {
+  background-color: #999;
+}
+a.color5 {
+  background-color: #666;
+}
+a.color6 {
+  background-color: #444;
+}
+a.color7 {
+  background-color: #aaa;
+}
+a.color8 {
+  background-color: #333;
+}
+a.color9 {
+  background-color: #666;
+}
+a.color10 {
+  background-color: #444;
 }
