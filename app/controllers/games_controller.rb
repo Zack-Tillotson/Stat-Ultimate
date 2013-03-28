@@ -64,6 +64,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.save
+        format.mobile { redirect_to @game, notice: 'Game was successfully created.' }
         format.html { redirect_to @game, notice: 'Game was successfully created.' }
       else
         format.html { render action: "new" }

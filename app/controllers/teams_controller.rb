@@ -71,6 +71,7 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       if @team.update_attributes(params[:team])
+        format.mobile { redirect_to @team, notice: 'Team was successfully updated.' }
         format.html { redirect_to @team, notice: 'Team was successfully updated.' }
         format.json { head :no_content }
       else
