@@ -4,7 +4,7 @@
     <div class="game-info-item alt-color1"><%= @game.our_score %> - <%= @game.their_score %></div>
     <div class="game-info-item alt-color2">
       <%= f.check_box :received %>
-      <label for="line_received">Pulled</label>
+      <label for="line_received" id="received-label"><%= @activeline.received ? "Received" : "Pulled" %></label>
     </div>
     <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Are you sure?' }, :id => "undo-btn", :class => "alt-color3 game-info-item" %>
   </div>

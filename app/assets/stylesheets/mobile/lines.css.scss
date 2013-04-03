@@ -6,6 +6,10 @@
   font-size: x-large;
 }
 
+.new_line label {
+  display: block;
+}
+
 .new_line .game-info {
   display: -webkit-flex;
 }

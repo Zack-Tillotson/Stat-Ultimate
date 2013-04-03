@@ -6,7 +6,12 @@ class Line < ActiveRecord::Base
 
   def prepopulate_received(game)
     game || return
-    self.received = (game.lines.length == 0 ? false : !game.lines.at(-1).scored)
+    previous_line = game.lines.at(-1)
+    self.received = (game.lines.length == 0 ? false : !previous_line.scored)
+    previous_line.players.each do |p|
+      puts "Adding #{p}, count #{self.players.count}"
+      self.players << p
+    end
   end
   
 end

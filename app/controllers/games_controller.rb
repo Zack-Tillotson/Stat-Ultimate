@@ -17,7 +17,10 @@ class GamesController < ApplicationController
     @team = @game.team
     @lines = @game.lines
     @activeline = Line.new
+    puts "Pre Activeline player count: #{@activeline.players.count}"
+    puts "Test Activeline player count: #{@game.lines.at(-1).players.count}"
     @activeline.prepopulate_received(@game)
+    puts "Post Activeline player count: #{@activeline.players.count}"
 
     respond_to do |format|
       format.html # show.html.erb
