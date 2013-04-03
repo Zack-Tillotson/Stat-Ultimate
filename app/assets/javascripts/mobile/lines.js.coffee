@@ -4,7 +4,6 @@
 
 # Hide checkboxes so we can replace it with colors!
 $(->
-  return
   $('.player-box label').click(->
     $(this).parent().toggleClass('color2')
   )
