@@ -11,8 +11,6 @@ body {
 }
 
 .content {
-  width: 90%;
-  padding: 5%;
 }
 
 header.site-header {
@@ -97,33 +95,43 @@ h2 {
   border-bottom: 1px solid #444;
 }
 
-a.color1 {
+.color1 {
   background-color: #aaa;
 }
-a.color2 {
+.color2 {
   background-color: #333;
 }
-a.color3 {
+.color3 {
   background-color: #666;
 }
-a.color4 {
+.color4 {
   background-color: #999;
 }
-a.color5 {
+.color5 {
   background-color: #666;
 }
-a.color6 {
+.color6 {
   background-color: #444;
 }
-a.color7 {
+.color7 {
   background-color: #aaa;
 }
-a.color8 {
+.color8 {
   background-color: #333;
 }
-a.color9 {
+.color9 {
   background-color: #666;
 }
-a.color10 {
+.color10 {
   background-color: #444;
+}
+
+.alt-color1 {
+  background-color: white;
+}
+.alt-color2 {
+  background-color: orange;
+}
+.alt-color3 {
+  background-color: #555;
 }

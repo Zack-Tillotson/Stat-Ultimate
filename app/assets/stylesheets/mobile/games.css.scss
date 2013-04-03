@@ -2,12 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.big-score {
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-}
 
 .short {
   margin: .5em 0;
@@ -42,18 +36,6 @@
   overflow: none;
 }
 
-.full-game-info {
-  margin-bottom: 20px;
-}
-
-.new_game {
-  font-size: 25px;
-}
-
 .new_game label, .new_game input {
   display: inline;
-}
-
-.player-box {
-  text-align: center;
 }

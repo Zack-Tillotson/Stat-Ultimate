@@ -25,7 +25,7 @@ StatUltimate::Application.routes.draw do
     end
   end
   resources :games, :shallow => true, :only => [:new, :create, :delete, :update, :show] do
-    resources :lines, :only => [:new, :create, :delete, :update]
+    resources :lines, :only => [:create, :delete, :update]
   end
   root :to => "root#index"
 
