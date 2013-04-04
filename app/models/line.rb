@@ -3,15 +3,16 @@ class Line < ActiveRecord::Base
   belongs_to :game
   has_many :line_players
   has_many :players, :through => :line_players
+  accepts_nested_attributes_for :line_players
 
-  def prepopulate_received(game)
-    game || return
+  def self.createFromGame(game)
     previous_line = game.lines.at(-1)
-    self.received = (game.lines.length == 0 ? false : !previous_line.scored)
-    previous_line.players.each do |p|
-      puts "Adding #{p}, count #{self.players.count}"
-      self.players << p
-    end
+
+    l = Line.new
+    l.received = (game.lines.length == 0 ? false : !previous_line.scored)
+    l.players << previous_line.players
+    l.line_players << previous_line.line_players
+    l
   end
   
 end

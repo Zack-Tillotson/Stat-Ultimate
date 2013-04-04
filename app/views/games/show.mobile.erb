@@ -1,19 +1,27 @@
-<%= form_for([@game, @activeline]) do |f| %>
+<%= form_for(@activeline) do |f| %>
   <%= hidden_field_tag :game_id, @game.id, :name => 'line[game_id]'%>
+  <%= f.hidden_field :game_id, :value => @game.id %>
   <div class="game-info">
     <div class="game-info-item alt-color1"><%= @game.our_score %> - <%= @game.their_score %></div>
     <div class="game-info-item alt-color2">
       <%= f.check_box :received %>
-      <label for="line_received" id="received-label"><%= @activeline.received ? "Received" : "Pulled" %></label>
+      <%= f.label :received, :id => "received-label", :value => (@activeline.received ? "Received" : "Pulled"), :for => "line[received]" %>
     </div>
     <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Are you sure?' }, :id => "undo-btn", :class => "alt-color3 game-info-item" %>
   </div>
   <h2>Players On Field</h2>
+    <% f.fields_for(:players) do |ff| %>
+      <div class="player color1">
+        <%= ff.text_area :throwaway %>
+        <%= ff.label :throwaway %>
+      </div>
+    <% end %>
   <h2>Available Players</h2>
   <div class="player-box">
     <% @game.team.players.each_with_index do |p,i| %>
-      <div class="player color1">
-        <%= check_box_tag "player_check_#{p.id}", p.id, false, :name => 'line[player_ids][]' %>
+      <% is_on_field = (@activeline.line_players.map { |x| x.player_id }.include?(p.id)) %>
+      <div class="player color<%=(is_on_field ? "2" : "1")%>">
+        <%= check_box_tag "player_check_#{p.id}", p.id, is_on_field, :name => 'line[player_ids][]' %>
         <%= label_tag "player_check_#{p.id}", p.name %>
       </div>
     <% end %>
