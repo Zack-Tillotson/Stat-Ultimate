@@ -24,8 +24,11 @@ StatUltimate::Application.routes.draw do
       end
     end
   end
-  resources :games, :shallow => true, :only => [:new, :create, :delete, :update, :show] do
+  resources :games, :shallow => true, :only => [:new, :create, :delete, :update, :show, :players] do
     resources :lines
+    member do
+      get 'players'
+    end
   end
   resources :lines
     

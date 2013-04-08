@@ -9,13 +9,6 @@
     </div>
     <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Are you sure?' }, :id => "undo-btn", :class => "alt-color3 game-info-item" %>
   </div>
-  <h2>Players On Field</h2>
-    <% f.fields_for(:players) do |ff| %>
-      <div class="player color1">
-        <%= ff.text_area :throwaway %>
-        <%= ff.label :throwaway %>
-      </div>
-    <% end %>
   <h2>Available Players</h2>
   <div class="player-box">
     <% @game.team.players.each_with_index do |p,i| %>

@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+
   # GET /games
   # GET /games.json
   def index
@@ -123,4 +124,13 @@ class GamesController < ApplicationController
       format.json
     end
   end
+
+  def players
+    @players = Game.find(params[:id]).team.players
+    respond_to do |format|
+      format.json { render json: @players}
+      format.mobile { render json: @players}
+    end
+  end
+
 end
