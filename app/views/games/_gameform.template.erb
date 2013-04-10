@@ -1,5 +1,14 @@
 <script id="player-view" type="text/template">
-  <div class="player color1">
-    <label><%%= name %></label>
+  <label class="name"><%%= name %></label>
+</script>
+<script id="active-players" type="text/template">
+  <h2>On Field</h2>
+</script>
+<script id="active-player-view" type="text/template">
+  <label class="name"><%%= name %></label>
+  <div class="stats">
+    <span class="throwaway"><%%= throwaway %></span>
+    <span class="drop"><%%= drop %></span>
+    <span class="takeaway"><%%= takeaway %></span>
   </div>
 </script>

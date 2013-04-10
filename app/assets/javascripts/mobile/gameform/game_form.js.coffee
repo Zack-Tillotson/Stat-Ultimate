@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  # Clean out the non js form
+  $('.player-box').html("")
   $('#received-label').click(->
     if $('#line_received')[0].checked
       $(this).html("Received")
@@ -14,9 +14,9 @@ $ ->
 
 $ ->
 
-  window.App = new Backbone.Marionette.Application()
+  window.App = new Backbone.Marionette.Application({game_id: (location.href.split('/'))[4]})
 
-  # Create the player list in backbone
+  # Full player list
   App.Player = Backbone.Model.extend(
   )
 
@@ -27,27 +27,50 @@ $ ->
   App.PlayerView = Backbone.Marionette.ItemView.extend(
 
     template: "#player-view"
+    className: ->
+      ret = ["player"]
+      ret
 
     events: {
-      "click .name", "toggleOnField"
+      "click label.name": "toggleOnField"
     }
 
-    toggleOnField: ->
-      console.log "Toggle on field!"
+    toggleOnField: (e) ->
+      App.vent.trigger('player:toggle', @model)
 
   )
 
   App.PlayerListView = Backbone.Marionette.CollectionView.extend(
     itemView: App.PlayerView
+    el: $('.player-box')
   )
 
-  game_id = (location.href.split('/'))[4]
+  # Active player list
+  App.ActivePlayerView = Backbone.Marionette.ItemView.extend(
+    template: "#active-player-view"
+  )
 
-  players = new App.PlayerList()
-  players.url = "/games/#{game_id}/players.json"
-  players.fetch(async: false)
+  App.ActivePlayerListView = Backbone.Marionette.CollectionView.extend(
+    template: "#active-players"
+    itemView: App.ActivePlayerView
+    el: $('#on-field-box')
 
-  playerListView = new App.PlayerListView(collection: players, model: App.Player)
+    initialize: (options) ->
+      App.vent.on('player:toggle', @toggleActive)
+
+    toggleActive: (p) =>
+      App.activePlayers.push p
+  )
+
+  # Start it up!
+  App.activePlayers = new App.PlayerList()
+
+  activePlayersView = new App.ActivePlayerListView(collection: App.activePlayers, model: App.Player)
+  activePlayersView.render()
+
+  App.players = new App.PlayerList()
+  App.players.url = "/games/#{App.game_id}/players.json"
+  App.players.fetch(async: false)
+
+  playerListView = new App.PlayerListView(collection: App.players, model: App.Player)
   playerListView.render()
-  $('.player-box').html(playerListView.el)
-
