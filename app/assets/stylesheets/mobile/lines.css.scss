@@ -54,7 +54,7 @@
   padding: .25em;
 }
 
-#on-field-box.active {
+#on-field-box {
   height: 430px;
 }
 
@@ -67,4 +67,8 @@
 }
 .active-player div.stat {
   -webkit-flex: 1 1;
+}
+
+.stat > input {
+  width: 40px;
 }
