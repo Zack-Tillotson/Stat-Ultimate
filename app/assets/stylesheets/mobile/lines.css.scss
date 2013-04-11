@@ -53,3 +53,18 @@
   border: 0;
   padding: .25em;
 }
+
+#on-field-box.active {
+  height: 430px;
+}
+
+.active-player {
+  display: -webkit-flex;  
+}
+
+.active-player span.name {
+  -webkit-flex: 1 1;
+}
+.active-player div.stat {
+  -webkit-flex: 1 1;
+}

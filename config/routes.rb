@@ -28,6 +28,7 @@ StatUltimate::Application.routes.draw do
     resources :lines
     member do
       get 'players'
+      get 'activeplayers'
     end
   end
   resources :lines

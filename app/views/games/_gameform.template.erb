@@ -1,14 +1,21 @@
 <script id="player-view" type="text/template">
-  <label class="name"><%%= name %></label>
+  <label class="name" active="<%%= active %>"><%%= name %></label>
 </script>
 <script id="active-players" type="text/template">
   <h2>On Field</h2>
 </script>
 <script id="active-player-view" type="text/template">
-  <label class="name"><%%= name %></label>
-  <div class="stats">
-    <span class="throwaway"><%%= "throwaway" %></span>
-    <span class="drop"><%%= "drop" %></span>
-    <span class="takeaway"><%%= "takeaway" %></span>
+  <span class="name"><%%= name %></span>
+  <div class="stat">
+    <label class="throwaway">Throw Away</label>
+    <input class="throwaway" type="text" disabled=true value="<%%= throwaway %>" length="2" />
+  </div>
+  <div class="stat">
+    <label class="drop">Drop</label>
+    <input class="drop" type="text" disabled=true value="<%%= drop %>" />
+  </div>
+  <div class="stat">
+    <label class="takeaway">Take Away</label>
+    <input class="takeaway" type="text" disabled=true value="<%%= takeaway %>" />
   </div>
 </script>

@@ -133,4 +133,16 @@ class GamesController < ApplicationController
     end
   end
 
+  def activeplayers
+    @lines = Game.find(params[:id]).lines
+    @lineplayers = nil
+    if @lines.length > 0
+      @lineplayers = @lines.at(-1).line_players
+    end
+    respond_to do |format|
+      format.json { render json: @lineplayers}
+      format.mobile { render json: @lineplayers}
+    end
+  end
+
 end
