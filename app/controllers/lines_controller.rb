@@ -28,14 +28,16 @@ class LinesController < ApplicationController
     ret.received = p["received"]
     ret.scored = p["scored"]
 
-    p["line_players"].each do |lp|
-      retLp = LinePlayer.new()
-      id = lp[0]
-      retLp.player_id = id
-      retLp.drop = lp[1]["drop"]
-      retLp.throwaway = lp[1]["throwaway"]
-      retLp.takeaway = lp[1]["takeaway"]
-      ret.line_players << retLp
+    if p["line_players"]
+      p["line_players"].each do |lp|
+        retLp = LinePlayer.new()
+        id = lp[0]
+        retLp.player_id = id
+        retLp.drop = lp[1]["drop"]
+        retLp.throwaway = lp[1]["throwaway"]
+        retLp.takeaway = lp[1]["takeaway"]
+        ret.line_players << retLp
+      end
     end
 
     ret
