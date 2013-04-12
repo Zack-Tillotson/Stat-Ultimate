@@ -10,8 +10,6 @@
     </div>
     <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Remove last score?' }, :id => "undo-btn", :class => "alt-color3 game-info-item" %>
   </div>
-  <div id="on-field-box">
-  </div>
   <h2>Available Players</h2>
   <div class="player-box">
     <% @game.team.players.each_with_index do |p,i| %>
@@ -21,6 +19,8 @@
         <%= label_tag "player_check_#{p.id}", p.name %>
       </div>
     <% end %>
+  </div>
+  <div id="on-field-box">
   </div>
   <div class="submit-box">
     <button type="submit" name="line[scored]" value="1" class="alt-color2 submit-btn">We Scored</input> 
