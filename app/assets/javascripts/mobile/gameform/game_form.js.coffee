@@ -4,12 +4,18 @@
 
 $ ->
   $('.player-box').html("")
-  $('#received-label').click(->
+  $('#received-label').click((e)->
     if $('#line_received')[0].checked
-      $(this).html("Received")
+      $('#received-label').html("Pulled")
+      $('#line_received')[0].checked = false
     else
-      $(this).html("Pulled")
+      $('#received-label').html("Received")
+      $('#line_received')[0].checked = true
   )
+  if $('#line_received')[0].checked
+    $('#received-label').html("Received")
+  else
+    $('#received-label').html("Pulled")
   $('#line_received').addClass("hide")
 
 $ ->
@@ -93,6 +99,16 @@ $ ->
     template: "#active-player-view"
     className: "active-player"
     tagName: "tr"
+
+    events: {
+      "click td.stat": "incrementStat"
+    }
+
+    incrementStat: (e) ->
+      t = $(e.target)
+      if t.is "td" then t = t.find('input')
+      t.attr('value', parseInt(t.attr('value')) + 1)
+
   )
 
   App.ActivePlayerListView = Backbone.Marionette.CompositeView.extend(

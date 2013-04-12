@@ -6,9 +6,9 @@
     <div class="game-info-item alt-color1"><%= @game.our_score %> - <%= @game.their_score %></div>
     <div class="game-info-item alt-color2">
       <%= f.check_box :received %>
-      <%= f.label :received, :id => "received-label", :value => (@activeline.received ? "Received" : "Pulled"), :for => "line[received]" %>
+      <%= f.label :received, :id => "received-label", :value => "Received", :for => "line[received]" %>
     </div>
-    <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Are you sure?' }, :id => "undo-btn", :class => "alt-color3 game-info-item" %>
+    <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Remove last score?' }, :id => "undo-btn", :class => "alt-color3 game-info-item" %>
   </div>
   <div id="on-field-box">
   </div>

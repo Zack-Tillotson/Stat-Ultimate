@@ -14,12 +14,12 @@
 <script id="active-player-view" type="text/template">
   <td class="name"><%%= name %></td>
   <td class="stat color1">
-    <input class="throwaway" type="text" disabled=true value="<%%= throwaway %>" length="2" />
+    <input class="throwaway" type="text" readonly=true value="<%%= throwaway %>" name="line[line_players][<%%=player_id%>][throwaway]"/>
   </td>
   <td class="stat color1">
-    <input class="drop" type="text" disabled=true value="<%%= drop %>" />
+    <input class="drop" type="text" readonly=true value="<%%= drop %>" name="line[line_players][<%%=player_id%>][drop]"/>
   </td>
   <td class="stat color1">
-    <input class="takeaway" type="text" disabled=true value="<%%= takeaway %>" />
+    <input class="takeaway" type="text" readonly=true value="<%%= takeaway %>" name="line[line_players][<%%=player_id%>][takeaway]"/>
   </td>
 </script>

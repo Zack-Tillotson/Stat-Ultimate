@@ -2,7 +2,10 @@ class LinesController < ApplicationController
   
   # POST /lines.json
   def create
-    @line = Line.new(params[:line])
+
+    @line = parseLine(params[:line])
+    
+    #@line = Line.new(params[:line])
     @game = Game.find(@line.game_id)
 
     respond_to do |format|
@@ -16,6 +19,26 @@ class LinesController < ApplicationController
         format.json { render json: @line.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def parseLine(p)
+    ret = Line.new()
+
+    ret.game_id = p["game_id"]
+    ret.received = p["received"]
+    ret.scored = p["scored"]
+
+    p["line_players"].each do |lp|
+      retLp = LinePlayer.new()
+      id = lp[0]
+      retLp.player_id = id
+      retLp.drop = lp[1]["drop"]
+      retLp.throwaway = lp[1]["throwaway"]
+      retLp.takeaway = lp[1]["takeaway"]
+      ret.line_players << retLp
+    end
+
+    ret
   end
 
   # PUT /lines/1
