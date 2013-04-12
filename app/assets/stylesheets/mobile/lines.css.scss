@@ -41,6 +41,7 @@
   padding: .25em;
   margin: 1px;
   text-align: center;
+  font-size: 1.25em;
 }
 
 .submit-box {
@@ -54,21 +55,27 @@
   padding: .25em;
 }
 
-#on-field-box {
-  height: 430px;
+.active-players-table {
+  width: 100%;
 }
 
-.active-player {
-  display: -webkit-flex;  
+.active-player td {
+  border-bottom: solid 1px #ccc;
 }
 
-.active-player span.name {
-  -webkit-flex: 1 1;
+.active-player .name {
+  padding-left: 1em;
 }
-.active-player div.stat {
-  -webkit-flex: 1 1;
+
+.stat {
+  text-align: center;
+  border-radius: 8px;
+  width: 20%;
 }
 
 .stat > input {
   width: 40px;
+  background: none;
+  border: none;
+  color: white;
 }

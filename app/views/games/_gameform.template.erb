@@ -3,19 +3,23 @@
 </script>
 <script id="active-players" type="text/template">
   <h2>On Field</h2>
+  <table class="active-players-table">
+    <thead>
+      <tr><td class="name"></td><td class="stat">Throw Away</td><td class="stat">Drop</td><td class="stat">Take Away</td></tr>
+    <thead>
+    <tbody>
+    </tbody>
+  </table>
 </script>
 <script id="active-player-view" type="text/template">
-  <span class="name"><%%= name %></span>
-  <div class="stat">
-    <label class="throwaway">Throw Away</label>
+  <td class="name"><%%= name %></td>
+  <td class="stat color1">
     <input class="throwaway" type="text" disabled=true value="<%%= throwaway %>" length="2" />
-  </div>
-  <div class="stat">
-    <label class="drop">Drop</label>
+  </td>
+  <td class="stat color1">
     <input class="drop" type="text" disabled=true value="<%%= drop %>" />
-  </div>
-  <div class="stat">
-    <label class="takeaway">Take Away</label>
+  </td>
+  <td class="stat color1">
     <input class="takeaway" type="text" disabled=true value="<%%= takeaway %>" />
-  </div>
+  </td>
 </script>

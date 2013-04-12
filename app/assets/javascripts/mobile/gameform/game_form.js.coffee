@@ -73,9 +73,9 @@ $ ->
   # Active player list
   App.ActivePlayer = App.Player.extend(
     initialize: (options) ->
-      @set('throwaway', options.throwaway ? 0)
-      @set('drop', options.throwaway ? 0)
-      @set('takeaway', options.throwaway ? 0)
+      @set('throwaway', 0)
+      @set('drop', 0)
+      @set('takeaway', 0)
       @set('player_id', options.player_id ? @get('id'))
   )
 
@@ -92,12 +92,14 @@ $ ->
   App.ActivePlayerView = Backbone.Marionette.ItemView.extend(
     template: "#active-player-view"
     className: "active-player"
+    tagName: "tr"
   )
 
   App.ActivePlayerListView = Backbone.Marionette.CompositeView.extend(
     template: "#active-players"
     itemView: App.ActivePlayerView
     className: "active"
+    itemViewContainer: "tbody"
     el: $('#on-field-box')
 
     initialize: (options) ->
