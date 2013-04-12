@@ -10,8 +10,11 @@ class Line < ActiveRecord::Base
 
     l = Line.new
     l.received = (game.lines.length == 0 ? false : !previous_line.scored)
-    l.players << previous_line.players
-    l.line_players << previous_line.line_players
+
+    if previous_line
+      l.players << previous_line.players
+      l.line_players << previous_line.line_players
+    end
     l
   end
   
