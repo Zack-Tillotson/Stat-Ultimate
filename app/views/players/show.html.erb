@@ -1,11 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @player.name %>, 
-  <b>Team:</b>
-  <%= @player.team.name %>
-</p>
+<%= link_to @player.name, player_path(@player) %>,
+Team: <%= link_to @player.team.name, team_path(@player.team) %>
 
 <%= render 'points_played', :player => @player %>
 

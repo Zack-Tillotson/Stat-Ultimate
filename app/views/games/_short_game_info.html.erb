@@ -1,8 +1,7 @@
     <div class="short">
+      <%= link_to "+", game %>
       <span class="<%= (game.our_score > game.their_score ? 'winning' : 'losing')%>">
         <span class="score"><%= game.our_score %></span> - <span class="score"><%= game.their_score %></span>
       </span>
       <span class="name"><%= game.description %> </span>
-      <%= link_to "Review", review_game_path(game), :class => "review" %>
-      
     </div>

@@ -81,8 +81,7 @@ class PlayersController < ApplicationController
     end
   end
 
-  # GET /players/1/graph.json
-  def graph
+  def pointgraph
     @player = Player.find(params[:id])
     @container = params[:container] || "container"
     @title = params[:title] || "Points"
@@ -96,7 +95,30 @@ class PlayersController < ApplicationController
     }
 
     respond_to do |format|
-      format.json
+      format.json { render 'graph/pointsgraph' }
+    end
+  end
+  
+  def errorgraph
+    @player = Player.includes(:line_players => [:line => [:game]]).find(params[:id])
+    #@player = Player.find(params[:id])
+    @container = params[:container] || "container"
+    @title = params[:title] || ""
+    @subtitle = params[:subtitle] || ""
+
+    @data = Hash.new
+    @player.line_players.each { |lp, i|
+      if @data[lp.line.game.id] == nil
+        @data[lp.line.game.id] = Hash.new
+        @data[lp.line.game.id]['drop'] = 0
+        @data[lp.line.game.id]['throwaway'] = 0
+      end
+      @data[lp.line.game.id]['drop'] += lp.drop
+      @data[lp.line.game.id]['throwaway'] += lp.throwaway
+    }
+
+    respond_to do |format|
+      format.json { render 'graph/errorsgraph' }
     end
   end
 end

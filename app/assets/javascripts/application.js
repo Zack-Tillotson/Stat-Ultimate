@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree ./desktop/
+//= require_tree ./mobile/
 //= require_tree ./general/
 //= require bootstrap.min

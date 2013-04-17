@@ -1,7 +1,4 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-
+# Hide the check boxes and change the style as people get checked!
 $ ->
   $('.player-box').html("")
   $('#received-label').click((e)->
@@ -18,6 +15,7 @@ $ ->
     $('#received-label').html("Pulled")
   $('#line_received').addClass("hide")
 
+# Create the on field users form
 $ ->
 
   window.App = new Backbone.Marionette.Application({game_id: (location.href.split('/'))[4]})

@@ -93,6 +93,32 @@ class TeamsController < ApplicationController
     end
   end
 
+  def errorsgraph
+    @team = Team.includes(:games => [:lines => [:line_players]]).find(params[:id])
+    @container = params[:container] || "container"
+    @title = params[:title] || ""
+    @subtitle = params[:subtitle] || ""
+
+    @data = Hash.new
+    if @team.games.length > 0
+      @team.games.each_with_index { |g, i|
+        @data[i+1] = Hash.new
+        @data[i+1]['drop'] = 0
+        @data[i+1]['throwaway'] = 0
+        g.lines.each { |l|
+          l.line_players.each { |lp|
+            @data[i+1]['drop'] += lp.drop
+            @data[i+1]['throwaway'] += lp.throwaway
+          }
+        }
+      }
+    end
+
+    respond_to do |format|
+      format.json { render 'graph/errorsgraph' }
+    end
+  end
+
   def fillOutPlayers(team)
     (25 - team.players.size).times do
       team.players.append(Player.new)

@@ -10,12 +10,13 @@ StatUltimate::Application.routes.draw do
 
   resources :players, :only => [:show, :create, :delete, :update] do # Created from team screen
     member do
-      get 'graph'
+      get 'pointgraph'
+      get 'errorgraph'
     end
   end
   resources :teams, :shallow => true do
     member do
-      get 'review'
+      get 'errorsgraph'
     end
     resources :games do
       member do

@@ -2,12 +2,14 @@
 <html>
 <head>
   <title>Stat Ultimate</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "mobile", :media => "all" %>
+  <%= javascript_include_tag "mobile" %>
   <script src="http://code.highcharts.com/highcharts.js"></script>
   <script src="http://underscorejs.org/underscore.js"></script>
   <script src="http://backbonejs.org/backbone-min.js"></script>
+  <script src="http://marionettejs.com/downloads/backbone.marionette.min.js"></script>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -29,8 +31,6 @@
   <div class="content">
     <%= yield %>
   </div>
-
-  <%= render 'root/footer' %>
 
 </body>
 </html>

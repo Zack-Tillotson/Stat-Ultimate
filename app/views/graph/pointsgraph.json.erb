@@ -21,7 +21,7 @@
   },
   "yAxis": {
     "title": {
-      "text": "Points"
+      "text": "<%=@title%>"
     },
     "plotLines": [{
       "value": 0,
@@ -30,10 +30,6 @@
     }],
     "tickInterval": 1 
   },
-  "colors": [
-    "#ff9933",
-    "#99ccff"
-  ],
   "legend": {
     "layout": "vertical",
     "align": "right",
@@ -44,7 +40,11 @@
     },
   "plotOptions": {
     "column": {
-      "stacking": "normal"
+      "stacking": "normal",
+      "dataLabels": {
+        "enabled": true,
+        "color": "white"
+      }
     }
   },
   "series": [{

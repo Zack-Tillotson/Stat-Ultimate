@@ -1,0 +1,60 @@
+{
+  "chart": {
+    "renderTo": "<%= @container %>",
+    "type": "column",
+    "marginRight": 50,
+    "marginLeft": 50,
+    "marginBottom": 25,
+    "marginTop": 25
+  },
+  "title": {
+    "text": "<%=@title %>",
+    "x": -20,
+    "y": 10
+  },
+  "subtitle": {
+    "text": "<%=@subtitle %>",
+    "x": -20
+  },
+  "xAxis": {
+    "categories": <%= @data.keys.to_s %>,
+    "min": 0
+  },
+  "yAxis": {
+    "title": {
+      "text": "Errors Per Game"
+    },
+    "plotLines": [{
+      "value": 0,
+      "width": 1,
+      "color": "#808080"
+    }],
+    "min": 0
+  },
+  "legend": {
+    "layout": "vertical",
+    "align": "right",
+    "verticalAlign": "top",
+    "x": -10,
+    "y": 10,
+    "borderWidth": 0
+    },
+  "plotOptions": {
+    "column": {
+      "stacking": "normal",
+      "dataLabels": {
+        "enabled": true,
+        "color": "white"
+      }
+    }
+  },
+  "series": [{
+      "name": "Drops",
+      "data": <%= @data.map { |key, value| value['drop'] } %>,
+      "stack": "errors"
+    }, {
+      "name": "Throw Aways",
+      "data": <%= @data.map { |key, value| value['throwaway'] } %>,
+      "stack": "errors"
+  }]
+}

@@ -1,5 +1,8 @@
-<div class="graph" id="graph-player-<%= player.id %>">
-  <script type="text/javascript">
-    $.getJSON('<%= graph_player_url(player, :format => :json, :container => "graph-player-#{player.id}") %>', function(data) {new Highcharts.Chart(data)})
-  </script>
-</div>
+<h2>Points</h2>
+<div class="graph" id="point-graph-player-<%= player.id %>"></div>
+<h2>Errors</h2>
+<div class="graph" id="error-graph-player-<%= player.id %>"></div>
+<script type="text/javascript">
+  $.getJSON('<%= pointgraph_player_url(player, :format => :json, :container => "point-graph-player-#{player.id}") %>', function(data) {new Highcharts.Chart(data)})
+  $.getJSON('<%= errorgraph_player_url(player, :format => :json, :container => "error-graph-player-#{player.id}") %>', function(data) {new Highcharts.Chart(data)})
+</script>

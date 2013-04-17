@@ -1,7 +1,29 @@
-<p id="notice"><%= notice %></p>
-<h1 class="game"><%= @team.name%>: <%= @game.description %></h1>
-<div class="big-score"><span class="us"><%= @game.our_score %></span> - <span class="them"><%= @game.their_score %></span></div>
-
-<div>
-  <%= render 'lines/form' %>
-</div>
+<%= render 'games/gameform.template' %>
+<%= form_for(@activeline) do |f| %>
+  <%= hidden_field_tag :game_id, @game.id, :name => 'line[game_id]'%>
+  <%= f.hidden_field :game_id, :value => @game.id %>
+  <div class="game-info">
+    <div class="game-info-item alt-color1"><%= @game.our_score %> - <%= @game.their_score %></div>
+    <div class="game-info-item alt-color2">
+      <%= f.check_box :received %>
+      <%= f.label :received, :id => "received-label", :value => "Received", :for => "line[received]" %>
+    </div>
+    <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Remove last score?' }, :id => "undo-btn", :class => "alt-color3 game-info-item" %>
+  </div>
+  <h2>Available Players</h2>
+  <div class="player-box">
+    <% @game.team.players.each_with_index do |p,i| %>
+      <% is_on_field = (@activeline.line_players.map { |x| x.player_id }.include?(p.id)) %>
+      <div class="player color<%=(is_on_field ? "2" : "1")%>">
+        <%= check_box_tag "player_check_#{p.id}", p.id, is_on_field, :name => 'line[player_ids][]' %>
+        <%= label_tag "player_check_#{p.id}", p.name %>
+      </div>
+    <% end %>
+  </div>
+  <div id="on-field-box">
+  </div>
+  <div class="submit-box">
+    <button type="submit" name="line[scored]" value="1" class="alt-color2 submit-btn">We Scored</input> 
+    <button type="submit" name="line[scored]" value="0" class="alt-color3 submit-btn">They Scored</input> 
+  </div>
+<% end %>
