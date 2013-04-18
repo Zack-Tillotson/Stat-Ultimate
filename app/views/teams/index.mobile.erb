@@ -1,8 +1,0 @@
-<h1>My Teams</h1>
-<div class="teams">
-<% @teams.each_with_index do |team,index| %>
-  <%= link_to team.name, team, :class => "color#{index % 9 + 1}" %>
-<% end %>
-</div>
-
-<%= link_to 'New Team', new_team_path, :id => "new-team" %>

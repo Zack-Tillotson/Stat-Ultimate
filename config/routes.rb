@@ -14,6 +14,7 @@ StatUltimate::Application.routes.draw do
       get 'errorgraph'
     end
   end
+
   resources :teams, :shallow => true do
     member do
       get 'errorsgraph'
@@ -25,6 +26,7 @@ StatUltimate::Application.routes.draw do
       end
     end
   end
+
   resources :games, :shallow => true, :only => [:new, :create, :delete, :update, :show, :players] do
     resources :lines
     member do

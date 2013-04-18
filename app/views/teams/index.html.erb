@@ -1,10 +1,8 @@
-<h1>Your Teams</h1>
-
+<h1>My Teams</h1>
+<div class="teams">
 <% @teams.each_with_index do |team,index| %>
-  <div class="team">
-    <%= link_to team.name, team %>
-    <%= link_to 'Delete', team, method: :delete, data: { confirm: 'Are you sure? This is irreversible!' }, :class => "warning destroy"  %>
-  </div>
+  <%= link_to team.name, team, :class => "color#{index % 9 + 1}" %>
 <% end %>
+</div>
 
 <%= link_to 'New Team', new_team_path, :id => "new-team" %>

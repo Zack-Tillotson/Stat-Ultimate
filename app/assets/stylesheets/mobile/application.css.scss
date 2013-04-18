@@ -14,13 +14,12 @@ body {
 }
 
 header.site-header {
-  border-bottom: 2px solid #555;
   margin: 0;
-  padding: .5em;
-  box-shadow: 0 0 .5em .5em rgba(0,0,0,.5);
+  box-shadow: 0 0 .5em .5em rgba(0,0,0,.3);
   position: relative;
   text-align: center;
   background-color: #888;
+  display: -webkit-flex;
 }
 
 header form {
@@ -28,33 +27,26 @@ header form {
 }
 
 div.site-info {
-  position: absolute;
-  left: .5em;
-  top: .5em;
+  display: -webkit-flex;
+  -webkit-flex: 0;
+  white-space: nowrap;
 }
 
 div.nav-items {
-  display: inline-block;
+  display: -webkit-flex;
+  -webkit-flex: 1;
 }
 
+div.nav-items a.nav-link {
+  -webkit-flex: 1;
+}
+
+.user-info {
+  text-align: center;
+  margin: 1em;
+}
+  
 footer {
-  bottom: 5px;
-  left: 0px;
-  width: 100%;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 1);
-  background-color: white;
-  border-top: 2px solid #333;
-  border-bottom: 2px solid #333;
-  box-shadow: 0 0px 5px 5px rgba(0,0,0,.5);
-}
-
-footer div.inside {
-  margin: 10px;
-}
-
-.footer-view-info {
-  display: inline;
 }
 
 a:link {

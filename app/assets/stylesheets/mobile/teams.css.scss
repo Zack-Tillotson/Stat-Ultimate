@@ -4,18 +4,17 @@
 
 a#new-team {
   width: 50%;
-  margin-top: 50px;
+  margin-top: 1em;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px;
+  padding: .5em;
 }
 
 .teams {
   font-size: large;
   display: -webkit-flex;
   -webkit-flex-direction: column;
-  min-height: 20em;
   width: 100%;
 }
 
@@ -36,11 +35,11 @@ a#new-team {
   display: inline-block;
 }
 
-input[type=text] {
+.new_team input[type=text] {
   font-size: 20px;
 }
 
-input[type=submit] {
+.new_team input[type=submit] {
   padding: 5px;
   font-size: 25px;
   border-radius: 5px;

@@ -29,13 +29,12 @@ class TeamsController < ApplicationController
     end
   end
 
-  # GET /teams/new
-  # GET /teams/new.json
   def new
     @team = fillOutPlayers(Team.new)
 
     respond_to do |format|
       format.html # new.html.erb
+      format.mobile # new.html.erb
       format.json { render json: @team }
     end
   end
@@ -120,7 +119,7 @@ class TeamsController < ApplicationController
   end
 
   def fillOutPlayers(team)
-    (25 - team.players.size).times do
+    (team.players.size + 25).times do
       team.players.append(Player.new)
     end
     team
