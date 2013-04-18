@@ -1,6 +1,8 @@
 # Hide the check boxes and change the style as people get checked!
 $ ->
+
   $('.player-box').html("")
+
   $('#received-label').click((e)->
     if $('#line_received')[0].checked
       $('#received-label').html("Pulled")
@@ -9,11 +11,17 @@ $ ->
       $('#received-label').html("Received")
       $('#line_received')[0].checked = true
   )
+
   if $('#line_received')[0].checked
     $('#received-label').html("Received")
   else
     $('#received-label').html("Pulled")
+
   $('#line_received').addClass("hide")
+
+  $('#player-box-title').click((e)->
+      $('.player-box').toggle('slow')
+  )
 
 # Create the on field users form
 $ ->
@@ -61,7 +69,7 @@ $ ->
         t.parent().addClass("color1")
         t.attr("active", "false")
         App.vent.trigger('player:toggle', @model)
-      else if App.activePlayers.length < 7
+      else
         t.parent().removeClass("color1")
         t.parent().addClass("color2")
         t.attr("active", "true")
@@ -106,7 +114,6 @@ $ ->
       t = $(e.target)
       if t.is "td" then t = t.find('input')
       t.attr('value', parseInt(t.attr('value')) + 1)
-
   )
 
   App.ActivePlayerListView = Backbone.Marionette.CompositeView.extend(
@@ -138,6 +145,7 @@ $ ->
     App.activePlayers.trigger('reset')
     App.players.trigger('reset')
   )
+
   App.players.on('sync', syncPlayers)
   App.activePlayers.on('sync', syncPlayers)
 
