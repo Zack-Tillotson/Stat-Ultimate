@@ -7,6 +7,10 @@
     <div class="nav-items">
       <% if @team %>
         <%=link_to @team.name, team_path(@team), :class => "nav-link" %>
+      <% else %>
+        <% if @user %>
+          <%=link_to "Teams", teams_path(), :class => "nav-link" %>
+        <%end%>
       <%end%>
       <% if @game %>
         <%=link_to @game.description, game_path(@game), :class => "nav-link" %>
