@@ -1,4 +1,8 @@
 Stat-Ultimate
 Zack Tillotson
 
-A simple RoR website for use by an Ultimate Frisbee coach to keep track of their team. It allows the user to keep track of when the players are on the field and what the score is. After games are over it should allow the user to view simple visualizations to understand how their team did.
+A website for use by an Ultimate Frisbee coach to keep track of their team. 
+
+* Fast in game screen to record score and player stats during game. 
+* Visualizations help show how the team is doing over time
+* Stats broken out per player and for the entire team
