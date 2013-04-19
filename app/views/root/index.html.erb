@@ -1,12 +1,19 @@
 <div class="tagline">Understand Your Ultimate Team!</div>
-<div class="subtagline">Track player and team stats from your smart phone.</div>
+<div class="subtagline">Track player and team stats from your phone.</div>
 
 <div class="user-info">
   <% if session.has_key?(:user_id) %>
     <span class="user">Welcome <%= @user.name %>!</span>
     <%=button_to "Logout", logout_path, :method => 'delete' %>
-  <% elsif request.fullpath != login_path %>
-    <%=link_to "Register or Log In", new_user_path, :method => 'get' %>
+  <% else %>
+    <div class="join-free">
+      <div class="join-free-question">Join Free</div>
+      <%=link_to "Sign Up", new_user_path, :method => 'get' %>
+    </div>
+    <div class="sign-in">
+      <div class="sign-in-question">Already have an account?</div>
+      <%=link_to "Sign in", login_path, :method => 'get' %>
+    </div>
   <% end %>
 </div>
 

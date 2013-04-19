@@ -9,3 +9,43 @@
   text-align: center;
   margin: .5em;
 }
+
+.join-free {
+  border: solid 1px rgb(0, 138, 11);
+  background-color: rgb(168, 247, 161);
+  font-size: 1.5em;
+  padding: .75em;
+}
+
+.join-free .join-free-question {
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+}
+
+.join-free a {
+  width: 50%;
+  text-align: center;
+  display: inline;
+}
+
+.sign-in {
+  border: solid 1px #333;
+  background-color: #ccc;
+  font-size: 1.5em;
+  padding: .75em;
+  margin-top: 1em;
+}
+  
+.sign-in .sign-in-question {
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+  font-size: .75em;
+}
+
+.sign-in a {
+  width: 50%;
+  text-align: center;
+  display: inline;
+}

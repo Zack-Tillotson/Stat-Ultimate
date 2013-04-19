@@ -8,7 +8,7 @@
       <% if @team %>
         <%=link_to @team.name, team_path(@team), :class => "nav-link" %>
       <% else %>
-        <% if @user %>
+        <% if @user and @user.id %>
           <%=link_to "Teams", teams_path(), :class => "nav-link" %>
         <%end%>
       <%end%>

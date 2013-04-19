@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_filter :authorize, :only => ['new', 'create']
+
   # GET /users
   # GET /users.json
   def index
@@ -26,6 +27,8 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+  
+    puts "############# user #{@user}, #{@user.id}"
 
     respond_to do |format|
       format.html # new.html.erb
