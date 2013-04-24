@@ -31,11 +31,9 @@ class TeamsController < ApplicationController
 
   def new
     @team = fillOutPlayers(Team.new)
-
     respond_to do |format|
-      format.html # new.html.erb
-      format.mobile # new.html.erb
-      format.json { render json: @team }
+      format.html 
+      format.mobile 
     end
   end
 
@@ -119,7 +117,8 @@ class TeamsController < ApplicationController
   end
 
   def fillOutPlayers(team)
-    (team.players.size + 25).times do
+    num = if team.players.size == 0 then 25 else team.players.size + 10 end
+    num.times do
       team.players.append(Player.new)
     end
     team

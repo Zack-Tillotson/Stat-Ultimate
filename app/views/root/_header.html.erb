@@ -5,14 +5,14 @@
     </div>
 
     <div class="nav-items">
-      <% if @team %>
+      <% if @team and @team.id %>
         <%=link_to @team.name, team_path(@team), :class => "nav-link" %>
       <% else %>
         <% if @user and @user.id %>
           <%=link_to "Teams", teams_path(), :class => "nav-link" %>
         <%end%>
       <%end%>
-      <% if @game %>
+      <% if @game and @game.id %>
         <%=link_to @game.description, game_path(@game), :class => "nav-link" %>
       <%end%>
     </div>
