@@ -1,4 +1,5 @@
 <div class="graph" id="<%= container %>">
+  <img src="/spinner.gif" />
   <script type="text/javascript">
     $.getJSON('<%= errorsgraph_team_url(team, :format => :json, :container => container, :title => "Errors Per Game") %>', function(data) {new Highcharts.Chart(data)})
   </script>
