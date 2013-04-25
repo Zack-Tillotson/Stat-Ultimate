@@ -32,6 +32,24 @@
   -webkit-flex-wrap: wrap;
 }
 
+#player-box-title .nav {
+  position: absolute;
+  right: 1em;
+}
+
+#player-box-title.open .nav-opened {
+  display: inline;
+}
+#player-box-title.open .nav-closed {
+  display: none;
+}
+#player-box-title.close .nav-opened {
+  display: none;
+}
+#player-box-title.close .nav-closed {
+  display: inline;
+}
+
 .player-box input.hide {
   display: none;
 }
@@ -48,11 +66,15 @@
   display: -webkit-flex;
 }
  
-.submit-box .submit-btn {
+.submit-box .submit-btn { 
   font-size: 1.15em;
   -webkit-flex: 1;
   border: 0;
   padding: .25em;
+}
+
+.submit-box .submit-btn.just-clicked, .undo-btn.just-clicked {
+  border: solid 1px blue;
 }
 
 .active-players-table {
@@ -77,5 +99,4 @@
   width: 40px;
   background: none;
   border: none;
-  color: white;
 }

@@ -20,7 +20,14 @@ $ ->
   $('#line_received').addClass("hide")
 
   $('#player-box-title').click((e)->
-      $('.player-box').toggle('slow')
+    $('.player-box').toggle('fast')
+    $('#player-box-title').toggleClass('open')
+    $('#player-box-title').toggleClass('close')
+  )
+
+  $('.submit-btn').click((e) ->
+    $(e.target).find('.spinner').show()
+    $(e.target).addClass('just-clicked')
   )
 
 # Create the on field users form

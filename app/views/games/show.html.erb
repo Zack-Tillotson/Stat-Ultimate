@@ -8,9 +8,12 @@
       <%= f.check_box :received %>
       <%= f.label :received, :id => "received-label", :value => "Received", :for => "line[received]" %>
     </div>
-    <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Remove last score?' }, :id => "undo-btn", :class => "alt-color3 game-info-item" %>
+    <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Remove last score?' }, :id => "undo-btn", :class => "alt-color3 game-info-item undo-btn" %>
   </div>
-  <h2 id="player-box-title">Available Players</h2>
+  <h2 id="player-box-title" class="open">Available Players
+    <span class="nav nav-opened">«</span>
+    <span class="nav nav-closed">»</span>
+  </h2>
   <div class="player-box">
     <% @game.team.players.each_with_index do |p,i| %>
       <% is_on_field = (@activeline.line_players.map { |x| x.player_id }.include?(p.id)) %>
@@ -23,7 +26,7 @@
   <div id="on-field-box">
   </div>
   <div class="submit-box">
-    <button type="submit" name="line[scored]" value="1" class="alt-color2 submit-btn">We Scored</input> 
-    <button type="submit" name="line[scored]" value="0" class="alt-color3 submit-btn">They Scored</input> 
+    <button type="submit" name="line[scored]" value="1" class="alt-color2 submit-btn">We Scored <img src="/spinner.gif" class="spinner" style="display: none" /></input> 
+    <button type="submit" name="line[scored]" value="0" class="alt-color3 submit-btn">They Scored <img src="/spinner.gif" class="spinner" style="display: none" /></input> 
   </div>
 <% end %>
