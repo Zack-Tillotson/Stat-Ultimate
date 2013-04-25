@@ -1,7 +1,9 @@
 <h1><%= @team.name %></h1>
-<%= link_to "New Game", new_team_game_path(@team), :class => "new-game-link" %>
-<%= link_to 'Edit Team', edit_team_path(@team) %>
-<%= link_to 'Delete Team', @team, method: :delete, data: { confirm: 'Are you sure? This is irreversible!' }, :class => "warning destroy"  %>
+<div class="team-links">
+  <%= link_to "New Game", new_team_game_path(@team), :class => "new-game-link" %>
+  <%= link_to 'Edit Team', edit_team_path(@team) %>
+  <%= link_to 'Delete Team', @team, method: :delete, data: { confirm: 'Are you sure? This is irreversible!' }, :class => "warning destroy"  %>
+</div>
 <h2 id="game-list-label">Games</h2>
 <div class="game-list subsection">
   <ul>

@@ -1,6 +1,5 @@
-<%= link_to @player.name, player_path(@player) %>,
-Team: <%= link_to @player.team.name, team_path(@player.team) %>
+<h1><%=@player.name%></h1>
 
 <%= render 'points_played', :player => @player %>
 
-<%= link_to 'Back', players_path %>
+<%= link_to 'Back', team_path(@team) %>

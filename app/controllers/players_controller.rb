@@ -1,33 +1,13 @@
 class PlayersController < ApplicationController
-  # GET /players
-  # GET /players.json
-  def index
-    @players = Player.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @players }
-    end
-  end
 
   # GET /players/1
   # GET /players/1.json
   def show
     @player = Player.find(params[:id])
+    @team = @player.team
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @player }
-    end
-  end
-
-  # GET /players/new
-  # GET /players/new.json
-  def new
-    @player = Player.new
-
-    respond_to do |format|
-      format.html # new.html.erb
       format.json { render json: @player }
     end
   end
@@ -101,13 +81,14 @@ class PlayersController < ApplicationController
   
   def errorgraph
     @player = Player.includes(:line_players => [:line => [:game]]).find(params[:id])
-    #@player = Player.find(params[:id])
     @container = params[:container] || "container"
     @title = params[:title] || ""
     @subtitle = params[:subtitle] || ""
 
     @data = Hash.new
     @player.line_players.each { |lp, i|
+      puts "Lp #{lp}, line_id #{lp.line_id}"
+      puts "line #{lp.line}"
       if @data[lp.line.game.id] == nil
         @data[lp.line.game.id] = Hash.new
         @data[lp.line.game.id]['drop'] = 0
