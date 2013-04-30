@@ -11,10 +11,14 @@
     </div>
   <% end %>
   <div class="field">
+    <%= f.label :opponent, "Opponent" %>
+    <%= f.text_field :opponent%>
+  </div>
+  <div class="field">
     <%= f.label :description, "Description" %>
     <%= f.text_field :description %>
-    <%= f.submit %>
   </div>
+  <%= f.submit %>
   <%= f.hidden_field :active, :value => 'true' %>
   <%= f.hidden_field :team_id, :value => @team.id %>
 <% end %>

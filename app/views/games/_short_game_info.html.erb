@@ -3,5 +3,5 @@
       <span class="<%= (game.our_score > game.their_score ? 'winning' : 'losing')%>">
         <span class="score"><%= game.our_score %></span> - <span class="score"><%= game.their_score %></span>
       </span>
-      <span class="name"><%= game.description %> </span>
+      <span class="name">Vs. <%=game.opponent%> - <%= game.description %></span>
     </div>
