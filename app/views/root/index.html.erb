@@ -2,7 +2,7 @@
 <div class="subtagline">Track player and team stats from your phone.</div>
 
 <div class="user-info">
-  <% if session.has_key?(:user_id) %>
+  <% if session.has_key?(:user_id) and @user %>
     <span class="user">Welcome <%= @user.name %>!</span>
     <%=button_to "Logout", logout_path, :method => 'delete' %>
   <% else %>
