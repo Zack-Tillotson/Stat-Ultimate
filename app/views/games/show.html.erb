@@ -4,7 +4,7 @@
   <%= f.hidden_field :game_id, :value => @game.id %>
   <h1>Vs. <%=@game.opponent%> - <%= @game.description %></h1>
   <div class="game-info">
-    <div class="game-info-item alt-color1"><%= @game.our_score %> - <%= @game.their_score %></div>
+    <div class="game-info-item alt-color1"><span id="us-score"><%= @game.our_score %></span> - <span id="them-score"><%= @game.their_score %></span></div>
     <div class="game-info-item alt-color2">
       <%= f.check_box :received %>
       <%= f.label :received, :id => "received-label", :value => "Received", :for => "line[received]" %>
