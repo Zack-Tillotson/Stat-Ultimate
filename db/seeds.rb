@@ -31,7 +31,7 @@ p = Player.create([
 ])
 (1..10).each { |i|
   ActiveRecord::Base.transaction do
-    g = Game.create({description: "Game #{i}", opponent: "Name #{rand(5)+1}", team_id: t.id})
+    g = Game.create({opponent: ["Swingline", "Just The Tip", "Off In The Shower", "Love Tractor"].sample, description: ["Short desc", "This is my medium description!", "This is a longer description, I don't know why it's so long."].sample, team_id: t.id})
     (1..25).each { |j|
       l = Line.create({received: rand(2), scored: rand(2), active: 0, game_id: g.id})
       p.shuffle.slice(1..7).each { |pl| l.players << pl }

@@ -43,7 +43,7 @@ $ ->
     )
 
     (player.clearStats() for player in App.activePlayers.models)
-    if score_value is 1
+    if parseInt(score_value) is 1
       $('#us-score').html(parseInt($('#us-score').html()) + 1)
     else
       $('#them-score').html(parseInt($('#them-score').html()) + 1)
