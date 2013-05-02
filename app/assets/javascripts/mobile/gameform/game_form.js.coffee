@@ -48,6 +48,7 @@ $ ->
     else
       $('#them-score').html(parseInt($('#them-score').html()) + 1)
     App.activePlayersView.render()
+    $('html, body').animate({scrollTop: 0})
 
     return false
   )

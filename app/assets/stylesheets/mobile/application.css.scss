@@ -15,11 +15,16 @@ body {
 
 header.site-header {
   margin: 0;
-  box-shadow: 0 0 .5em .5em rgba(0,0,0,.3);
   position: relative;
   text-align: center;
-  background-color: #888;
+  background: -webkit-linear-gradient(#738abb, #2c4986);
   display: -webkit-flex;
+}
+
+header.site-header a {
+  background: none;
+  border: none;
+  color: white;
 }
 
 header form {
@@ -52,18 +57,18 @@ footer {
 a:link {
   text-decoration: none;
   padding: .25em;
-  background-color: #666;
-  border: outset 2px #555;
-  color: white;
+  background-color: #ccc;
+  border: outset 2px #ccc;
+  color: black;
   text-align: center;
 }
 
 a:visited {
   text-decoration: none;
   padding: .25em;
-  background-color: #666;
-  border: outset 2px #555;
-  color: white;
+  background-color: #ccc;
+  border: outset 2px #ccc;
+  color: black;
   text-align: center;
 }
 
@@ -119,15 +124,23 @@ h2 {
 }
 
 .alt-color1 {
-  background-color: white;
+  background-color: rgb(159,159,226);
 }
 .alt-color2 {
-  background-color: orange;
+  background-color: #9acffc;
 }
 .alt-color3 {
-  background-color: #555;
+  background-color: #ff8a8a;
 }
 
 .graph {
   text-align: center;
+}
+
+.form-table {
+  width: 100%;
+}
+
+.form-table tr > td > * {
+  width: 100%;
 }

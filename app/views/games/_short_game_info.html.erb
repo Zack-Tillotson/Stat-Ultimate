@@ -1,5 +1,5 @@
     <div class="short">
-      <%= link_to "+", game %>
+      <%= link_to "+", game, :class => "edit-link" %>
       <span class="<%= (game.our_score > game.their_score ? 'winning' : 'losing')%>">
         <span class="score"><%= game.our_score %></span> - <span class="score"><%= game.their_score %></span>
       </span>

@@ -3,8 +3,10 @@
 
 <div class="user-info">
   <% if session.has_key?(:user_id) and @user %>
-    <span class="user">Welcome <%= @user.name %>!</span>
-    <%=button_to "Logout", logout_path, :method => 'delete' %>
+    <div class="join-free">
+      <div class="join-free-question">Welcome <%= @user.name %>!</div>
+      <%=link_to "Logout", logout_path, :method => 'delete' %>
+    </div>
   <% else %>
     <div class="join-free">
       <div class="join-free-question">Join Free</div>

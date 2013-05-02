@@ -11,22 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name, "Team Name" %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <h3>Players</h3>
+  <table class="form-table">
+    <tr class="field">
+      <td><%= f.label :name, "Team Name" %>
+      <td><%= f.text_field :name %>
+    </tr>
+    <tr>
+      <td colspan="2"><h3>Players</h3>
+    </tr>
     <% index = 0 %>
     <%= f.fields_for :players do |ff| %>
-      <div class="field">
+      <tr class="field">
         <% index = index + 1 %>
-        <%= ff.label :name, "Player #{index}: ", :class => "player-name" %>
-        <%= ff.text_field :name %>
-      </div>
+        <td><%= ff.label :name, "Player #{index}: ", :class => "player-name" %>
+        <td><%= ff.text_field :name %>
+      </tr>
     <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+    <tr class="actions">
+      <td colspan="2"><%= f.submit %>
+    </tr>
+  </table>
+  <% end %>

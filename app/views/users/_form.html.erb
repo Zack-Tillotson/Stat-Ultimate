@@ -11,19 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name, "Username" %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :password, "Password" %>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation, 'Confirm Password' %>
-    <%= f.text_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <table class="form-table">
+    <tr class="field">
+      <td><%= f.label :name, "Username" %>
+      <td><%= f.text_field :name %>
+    </tr>
+    <tr class="field">
+      <td><%= f.label :password, "Password" %>
+      <td><%= f.text_field :password %>
+    </tr>
+    <tr class="field">
+      <td><%= f.label :password_confirmation, 'Confirm Password' %>
+      <td><%= f.text_field :password_confirmation %>
+    </tr>
+    <tr class="actions">
+      <td colspan="2"><%= f.submit %>
+    </tr>
+  </table>
 <% end %>
