@@ -4,12 +4,12 @@
   <%= f.hidden_field :game_id, :value => @game.id %>
   <h1>vs. <%=@game.opponent%></h1>
   <div class="game-info">
-    <div class="game-info-item alt-color1"><span id="us-score"><%= @game.our_score %></span> - <span id="them-score"><%= @game.their_score %></span></div>
-    <div class="game-info-item alt-color2">
+    <div class="game-info-item"><span id="us-score"><%= @game.our_score %></span> - <span id="them-score"><%= @game.their_score %></span></div>
+    <div class="game-info-item alt-color1">
       <%= f.check_box :received %>
       <%= f.label :received, :id => "received-label", :value => "Received", :for => "line[received]" %>
     </div>
-    <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Remove last score?' }, :id => "undo-btn", :class => "alt-color3 game-info-item undo-btn" %>
+    <%= link_to 'Undo', @game.lines.last, method: :delete, data: { confirm: 'Remove last score?' }, :id => "undo-btn", :class => "game-info-item undo-btn" %>
   </div>
   <h2 id="player-box-title" class="open">Available Players
     <span class="nav nav-opened">«</span>

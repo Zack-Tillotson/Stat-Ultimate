@@ -10,15 +10,19 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :opponent, "Opponent" %>
-    <%= f.text_field :opponent%>
-  </div>
-  <div class="field">
-    <%= f.label :description, "Description" %>
-    <%= f.text_field :description %>
-  </div>
-  <%= f.submit %>
+  <table class="form-table">
+    <tr class="field">
+      <td><%= f.label :opponent, "Opponent" %>
+      <td><%= f.text_field :opponent%>
+    </tr>
+    <tr class="field">
+      <td><%= f.label :description, "Description" %>
+      <td><%= f.text_field :description %>
+    </tr>
+    <tr>
+      <td colspan="2"><%= f.submit %>
+    </tr>
+  </table>
   <%= f.hidden_field :active, :value => 'true' %>
   <%= f.hidden_field :team_id, :value => @team.id %>
 <% end %>
