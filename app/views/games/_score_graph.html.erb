@@ -1,6 +1,6 @@
 <div class="graph" id="<%= container %>">
   <img src="/spinner.gif" />
   <script type="text/javascript">
-    $.getJSON('<%= graph_game_url(game, :format => :json, :container => container) %>', function(data) {new Highcharts.Chart(data)})
+    $.getJSON('<%= graph_game_path(game, :format => :json, :container => container) %>', function(data) {new Highcharts.Chart(data)})
   </script>
 </div>

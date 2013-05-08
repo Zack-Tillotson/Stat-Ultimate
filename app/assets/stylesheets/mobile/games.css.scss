@@ -6,21 +6,19 @@
 .short {
   margin: .5em .5em;
   clear: both;
+  border-top: solid 1px #ccc;
+  padding-top: .5em;
 }
 
 .short .edit-link {
   float: left;
   margin-left: 3px;
-  width: 1em;
+  padding-left: .5em;
+  padding-right: .5em;
 }
 
 .short span.name {
-  border-top: solid 1px #ccc;
-  display: block;
-  min-width: 50%;
-  margin-left: 8em;
 }
-
 
 .short .winning {
   background-color: #9ACFFC;
@@ -38,6 +36,21 @@
   text-align: center;
   float: left;
   margin-left: .25em;
+  margin-right: .25em;
+}
+
+.short .sub {
+  margin-left: 3px;
+  color: #ccc;
+}
+
+.short .description {
+  margin: 0 .5em;
+  clear: both;
+  display: block;
+}
+
+.short .review {
 }
 
 .short .score {

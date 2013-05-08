@@ -30,8 +30,7 @@ class GamesController < ApplicationController
     @team = @game.team
     @lines = @game.lines
     @players = @team.players
-    @activeline = Line.new
-    @activeline.prepopulate_received(@game)
+    @activeline = Line.createFromGame(@game)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -119,9 +118,10 @@ class GamesController < ApplicationController
       @data[i+1]['us'] = prevus
       @data[i+1]['them'] = prevthem
     }
+    @title = "Game Score Over Time"
 
     respond_to do |format|
-      format.json
+      format.json { render 'graph/gamepoints' }
     end
   end
 

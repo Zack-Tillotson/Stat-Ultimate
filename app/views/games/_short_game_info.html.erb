@@ -3,5 +3,8 @@
       <span class="<%= (game.our_score > game.their_score ? 'winning' : 'losing')%>">
         <span class="score"><%= game.our_score %></span> - <span class="score"><%= game.their_score %></span>
       </span>
-      <span class="name">Vs. <%=game.opponent%> - <%= game.description %></span>
+      <%= link_to "Review", review_game_path(game), :class => "edit-link" %>
+      <span class="sub">vs.</span>
+      <span class="name"><%=game.opponent%></span>
+      <span class="description"><%= game.description %></span>
     </div>

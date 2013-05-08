@@ -10,7 +10,7 @@
   <tbody>
       <% game.team.players.each do |p| %>
         <tr>
-          <td class="name"><%= link_to "»", p, :class => "subtle-link" %> <%= p.name %> </td>
+          <td class="name"><%= p.name %></td>
           <% game.lines.each_with_index do |l,i| %>
             <td class="game-line <%=l.scored ? "us" : "them"%>">
               <%=l.players.include?(p) ? "X" : "" %>
