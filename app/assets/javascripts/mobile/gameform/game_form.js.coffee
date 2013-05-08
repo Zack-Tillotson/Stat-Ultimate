@@ -45,8 +45,12 @@ $ ->
     (player.clearStats() for player in App.activePlayers.models)
     if parseInt(score_value) is 1
       $('#us-score').html(parseInt($('#us-score').html()) + 1)
+      $('#received-label').html("Pulled")
+      $('#line_received')[0].checked = false
     else
       $('#them-score').html(parseInt($('#them-score').html()) + 1)
+      $('#received-label').html("Received")
+      $('#line_received')[0].checked = true
     App.activePlayersView.render()
     $('html, body').animate({scrollTop: 0})
 
