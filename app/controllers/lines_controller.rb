@@ -64,9 +64,24 @@ class LinesController < ApplicationController
   # DELETE /lines/1
   # DELETE /lines/1.json
   def destroy
-    @line = Line.find(params[:id])
-    @game = Game.find(@line.game_id)
-    @line.destroy
+
+    id = params[:id]
+
+    if id.start_with?("last")
+      id = id[4..-1]
+      puts "################## ID #{id}"
+      @game = Game.find(id)
+      @line = @game.lines.last
+      puts "################## line #{@line}"
+    else 
+      @line = Line.find(params[:id])
+      @game = Game.find(@line.game_id)
+    end
+
+    if @line
+      @line.line_players.destroy
+      @line.destroy
+    end
 
     respond_to do |format|
       format.html { redirect_to game_url(@game) }
