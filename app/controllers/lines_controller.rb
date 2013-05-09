@@ -69,17 +69,15 @@ class LinesController < ApplicationController
 
     if id.start_with?("last")
       id = id[4..-1]
-      puts "################## ID #{id}"
       @game = Game.find(id)
       @line = @game.lines.last
-      puts "################## line #{@line}"
     else 
       @line = Line.find(params[:id])
       @game = Game.find(@line.game_id)
     end
 
     if @line
-      @line.line_players.destroy
+      @line.line_players.each { |p| p.destroy }
       @line.destroy
     end
 
